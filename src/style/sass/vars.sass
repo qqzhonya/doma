@@ -1,0 +1,78 @@
+$green-color: #00950F
+$bg-light-green: #DAFFC9
+
+$font-color: rgba(0, 0, 0, .8)
+
+$white: #ffffff
+
+$bg-light-color: rgba(3, 0, 144, 0.05)
+
+$default-font: "Exo 2", sans-serif
+$second-font: "Caveat", sans-serif
+$default-transition: .35s
+$default-opacity: .8
+
+*, body, html 
+	margin: 0
+	padding: 0
+	box-sizing: border-box
+
+html, body
+	min-width: 320px
+	font-family: $default-font
+	font-weight: 500
+	font-style: normal
+	color: #000
+	background-color: $white
+	overflow-x: hidden
+
+html
+	height: 100%
+	scroll-behavior: smooth
+
+body 
+	position: relative
+	height: 100%
+
+	&.modal-active
+		overflow: hidden
+
+button,
+input,
+textarea,
+select
+	outline: none
+	border-radius: 0
+	-moz-appearance: none
+  -webkit-appearance: none
+  +prefix(appearance, none)
+
+a
+	text-decoration: none
+	outline: none
+
+.container 
+	margin: 0 auto
+	padding: 0 15px
+	width: 100%
+	max-width: 1140px
+
+	&-head
+
+		&-text
+			display: inline-block
+			position:  relative
+			font-size: 34px
+			font-weight: 500
+			line-height: 40px
+			color: #000
+
+			&:after
+				content: ''
+				display: block
+				position: absolute
+				right: 0
+				bottom: -10px
+				width: 900px
+				height: 1px
+				background-color: #DAFFC9

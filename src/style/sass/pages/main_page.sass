@@ -1,0 +1,275 @@
+.main
+  &-head-slider
+    position: relative
+
+    .slick-slide
+        display: flex !important
+
+    .slick-arrow
+      position: absolute
+      margin:
+        top: -25px
+      top: 40%
+      width: 50px
+      height: 50px
+      font-size: 0
+      background-color: rgba(99, 30, 1, .5)
+      background-size: 12px 25px
+      background-repeat: no-repeat
+      border: 0
+        radius: 100px
+      +prefix(transition, $default-transition)
+      cursor: pointer
+      z-index: 1
+
+      &.slick-prev
+        left: 20%
+        background-image: url(../img/icon/arrow-s-l.svg)
+        background-position: left 17px center
+
+      &.slick-next
+        right: 20%
+        background-image: url(../img/icon/arrow-s-r.svg)
+        background-position: right 17px center
+      
+      &:hover
+        background-color: rgba(99, 30, 1, 1)
+
+    .slick-dots
+      +flex
+      position: absolute
+      left: 50%
+      bottom: 10px
+      +prefix(transform, translateX(-50%))
+      list-style-type: none
+
+      button
+        margin: 0 5px
+        width: 81px
+        height: 4px
+        font-size: 0
+        background-color: #631E01
+        border: 0
+          radius: 10px
+        cursor: pointer
+        opacity: .2
+      
+      .slick-active
+        button
+          opacity: 1
+          +box-shadow(0px 0px 4px rgba(0, 0, 0, 0.25))
+
+    &-elem
+      +flex
+      position: relative
+      min-height: 686px
+      +align-items(center)
+
+    &-bg
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100%
+      z-index: 0
+
+      img
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+      
+    &-info
+      position: relative
+      padding: 0 94px
+      z-index: 1
+
+    &-title
+      margin:
+        bottom: 35px
+      font-size: 50px
+      font-weight: 700
+      line-height: 60px
+      color: $font-color
+    
+    &-price
+      margin:
+        bottom: 40px
+
+      &-title
+        font-size: 18px
+        font-weight: 400
+        line-height: 21px
+        color: rgba(0, 0, 0, .5)
+
+        b
+          font-weight: 700
+      
+      &-value
+        margin:
+          top: 3px
+
+      &-curent
+        margin:
+          right: 5px
+        font-size: 27px
+        font-weight: 700
+        line-height: 32px
+        color: #000
+      
+      &-old
+        font-size: 18px
+        font-weight: 400
+        line-height: 21px
+        color: rgba(0, 0, 0, .9)
+
+    &-note
+      color: $green-color
+
+      &-wrap
+        +flex
+      
+      &-elem 
+        font-size: 20px
+        font-weight: 700
+        line-height: 24px
+
+        &:nth-child(2)
+          margin: 0 35px
+          padding: 0 35px
+          border:
+            left: 1px solid $green-color
+            right: 1px solid $green-color
+
+      &-desc
+        margin:
+          top: 10px
+        font-size: 16px
+        font-weight: 700
+        line-height: 19px
+        color: $green-color
+
+    &-link
+      display: inline-block
+      margin:
+        top: 30px
+      padding: 10px 50px 
+      font-size: 18px
+      font-weight: 700
+      line-height: 21px
+      color: $green-color 
+      border: 1px solid $green-color
+      border-radius: 10px
+      +prefix(transition, $default-transition)
+
+      &:hover
+        background-color: $bg-light-color
+
+    &-timer
+      +flex
+      margin:
+        top: 30px
+        left: 50px
+
+      &-info
+        font-family: $second-font
+        font-size: 20px 
+        font-weight: 700
+        line-height: 25px
+        color: #ff0000
+        text-align: center
+        
+  &-advantages
+    margin:
+      top: 50px
+
+    .container-head
+      +flex
+      +align-items(flex-end)
+      
+    &-more
+      +flex
+      position: relative
+      margin: 0 0 0 auto
+      padding:
+        left: 15px
+      font-size: 14px
+      font-weight: 500
+      line-height: 16px
+      color: #631E01
+      +align-items(center)
+      +prefix(transition, $default-transition)
+      cursor: pointer
+
+      &:hover
+        opacity: $default-opacity
+
+      &:after
+        content: ''
+        display: block
+        margin:
+          top: 3px
+          left:  10px
+        width: 10px
+        height: 5px
+        background-image: url(../img/icon/arrow-a-d.svg)
+        background-size: 100% auto
+        background-position: center center
+        background-repeat: no-repeat
+        +prefix(transition,  $default-transition)
+
+      &.active
+        &:after
+          +prefix(transform, rotate(180deg))
+
+    &-wrap
+      +flex
+      +flex-wrap(wrap)
+      +justify-content(center)
+
+    &-elem 
+      +flex
+      position: relative
+      margin:
+        top: 80px
+      width: 20%
+      height: 100%
+      min-height: 170px
+      +align-items(center)
+      +justify-content(center)
+      +flex-flow(column)
+
+      &:nth-child(n+6)
+        display: none
+      
+      &.active
+        +flex
+
+    &-num
+      position: absolute
+      top: 0
+      left: 50%
+      +prefix(transform, translateX(-50%))
+      object-fit: contain
+
+    &-text
+      display: block
+      margin: 0 auto
+        top: 15px
+      font-size: 18px
+      font-weight: 500
+      line-height: 21px
+      color: #000
+      text-align: center
+  
+  &-build
+    margin:
+      top: 90px
+    padding:
+      bottom: 100px
