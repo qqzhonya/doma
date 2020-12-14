@@ -3,61 +3,27 @@
     position: relative
 
     .slick-slide
-        display: flex !important
+      display: flex !important
 
     .slick-arrow
-      position: absolute
       margin:
         top: -25px
       top: 40%
-      width: 50px
-      height: 50px
-      font-size: 0
       background-color: rgba(99, 30, 1, .5)
-      background-size: 12px 25px
-      background-repeat: no-repeat
-      border: 0
-        radius: 100px
-      +prefix(transition, $default-transition)
-      cursor: pointer
-      z-index: 1
 
       &.slick-prev
         left: 20%
         background-image: url(../img/icon/arrow-s-l.svg)
-        background-position: left 17px center
 
       &.slick-next
         right: 20%
         background-image: url(../img/icon/arrow-s-r.svg)
-        background-position: right 17px center
       
-      &:hover
+      &:not(.slick-disabled):hover
         background-color: rgba(99, 30, 1, 1)
 
     .slick-dots
-      +flex
-      position: absolute
-      left: 50%
       bottom: 10px
-      +prefix(transform, translateX(-50%))
-      list-style-type: none
-
-      button
-        margin: 0 5px
-        width: 81px
-        height: 4px
-        font-size: 0
-        background-color: #631E01
-        border: 0
-          radius: 10px
-        cursor: pointer
-        opacity: .2
-      
-      .slick-active
-        button
-          opacity: 1
-          +box-shadow(0px 0px 4px rgba(0, 0, 0, 0.25))
 
     &-elem
       +flex
@@ -271,5 +237,366 @@
   &-build
     margin:
       top: 90px
+
+    &-wrap
+      +flex()
+      margin: 0 -15px
+        top: 25px
+      +flex-wrap(wrap)
+
+    &-elem
+      padding: 0 15px
+
+      &.xl
+        margin:
+          bottom: 26px
+        width: 50%
+        min-height: 300px
+
+      &.sm
+        width: 33.33%
+        min-height: 220px
+
+      &:hover
+        .main-build-elem-wrap
+          +box-shadow(0px 10px 16px rgba(0, 0, 0, 0.1))
+
+          &:after
+            top: 12px
+            left: 12px
+            right: 12px
+            bottom: 12px
+
+        .main-build-elem-img
+          +prefix(transform, scale(1.04))
+
+        .main-build-elem-arrow
+          margin:
+            left: 5px
+
+      &-wrap
+        position: relative
+        padding: 45px
+        width: 100%
+        height: 100%
+        background-color: $white
+        border-radius: 10px
+        +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+        +prefix(transition, $default-transition)
+        overflow: hidden
+
+        &:after
+          content: ''
+          display: block
+          position: absolute
+          top: 18px
+          left: 18px
+          right: 18px
+          bottom: 18px
+          border: 1px solid rgba(137, 224, 96, 0.9)
+          border-radius: 10px
+          +prefix(transition, $default-transition)
+
+      &-img
+        position: absolute
+        right: -20px
+        bottom: -20px
+        +prefix(transition, $default-transition)
+
+      &-text
+        font-size: 28px 
+        font-weight: 700
+        line-height: 33px
+        color: #000
+      
+      &-arrow
+        margin:
+          top: 30px
+        width: 50px
+        height: 16px
+        background-image: url(../img/icon/arrow-b-r.svg)
+        background-size: 100% auto
+        background-position: center 
+        background-repeat: no-repeat
+        +prefix(transition, $default-transition)
+
+  &-popular
+    margin:
+      top: 120px
+    
+    &-tab
+      &-nav
+        +flex
+        margin:
+          top: 70px
+        list-style-type: none
+        +justify-content(center)
+
+        &-elem 
+          padding: 13px 10px 14px 10px 
+          width: 100%
+          max-width: 190px
+          font-size: 16px
+          font-weight: 700
+          line-height: 19px
+          color: rgba(0, 0, 0, .5)
+          text-align: center
+          border: 1px solid #F4EBD4
+          border-radius: 10px
+          cursor: pointer
+          +prefix(transition, $default-transition)
+
+          &:nth-child(2)
+            margin: 0 15px
+
+          &:not(.active):hover
+            color: rgba(0, 0, 0, .8)
+            background-color: #faf6eb
+          
+          &.active
+            color: #682F13
+            background-color: #F4EBD4
+            cursor: default
+
+      &-elem
+        display: none
+
+        &.active
+          display: block
+
+    .product-slider
+      margin:
+        top: 50px
+    
+    &-filter
+      +flex()
+      margin:
+        top: 20px
+      +justify-content(center)
+      +flex-wrap(wrap)
+
+      &-btn
+        margin: 7px
+        padding: 6px 10px 8px 10px
+        font-size: 14px
+        font-weight: 400
+        line-height: 16px
+        color: rgba(0, 0, 0, .2)
+        background-color: rgba(0, 0, 0, 0.1)
+        border-radius: 10px
+        +prefix(transition, $default-transition)
+        cursor: pointer
+
+        &:not(.active):hover
+          color: rgba(0, 0, 0, .5)
+          background-color: rgba(0, 0 ,0, .2)
+
+        &.active
+          color: $green-color
+          background-color: $bg-light-green
+    
+    &-all
+      display: block
+      margin: 0 auto
+        top: 10px
+      max-width: 155px
+      text-align: center
+  
+  &-about
+    position: relative
     padding:
-      bottom: 100px
+      top: 130px
+      bottom: 124px
+
+    &:after
+      content: ''
+      display: block
+      position:  absolute
+      bottom: -50px
+      right: -80px
+      width: 100%
+      height: 100%
+      background-image: url(../img/about-bg.png)
+      background-size: auto
+      background-position: right center
+      background-repeat: no-repeat
+      z-index: 0
+
+    &-text
+      position: relative
+      margin:
+        top: 45px
+      max-width: 535px
+      font-size: 22px
+      font-weight: 500
+      line-height: 29px
+      color: rgba(0, 0, 0, .6)
+      z-index: 1
+    
+    &-link
+      display: inline-block
+      position: relative
+      margin:
+        top: 40px
+      z-index: 1
+  
+  &-info
+    position: relative
+    padding:
+      top: 100px
+      bottom: 95px
+    background-color: rgba(0, 0, 0, 0.04)
+    z-index: 10
+
+    &-wrap
+      +flex()
+
+    .container-head-text
+      &:after
+        background-color: #A2D68B
+    
+    &-elem
+      
+      &:first-child
+        width: 60.53%
+      
+      &:last-child
+        padding:
+          left: 65px
+        width: 39.47%
+    
+    &-done
+      +flex()
+      margin: 0 -6px
+        top: 60px
+      
+      &-elem
+        padding: 0 6px
+        width: 33.33%
+
+        &.timber
+          .main-info-done-progressbar
+            &:after
+              width: 80%
+
+        &.frame
+          .main-info-done-progressbar
+            &:after
+              width: 30%
+
+        &.bath
+          .main-info-done-progressbar
+            &:after
+              width: 42%
+
+      &-wrap
+        position: relative
+
+      &-val
+        font-size: 93px
+        font-weight: 700
+        line-height: 75px
+        color: #A5FC7D
+      
+      &-title
+        position: absolute
+        left: 0
+        bottom: 20px
+        font-size: 20px
+        font-weight: 700
+        line-height: 24px
+        color: $green-color
+      
+      &-progressbar
+        position: relative
+        margin:
+          top: 10px
+        width: 100%
+        height: 9px
+        background-color: #E6E6E6
+        border-radius: 10px
+        overflow: hidden 
+
+        &:after
+          content: ''
+          display: block
+          position: absolute
+          top: 0
+          left: 0
+          width: 0
+          height: 100%
+          background-color: $green-color
+          border-radius: 10px
+
+    &-projects
+      margin:
+        top: 70px
+
+      .product-slider
+        +flex()
+        padding: 0
+        +justify-content(center)
+        +align-items(center)
+        +flex-wrap(wrap)
+
+        .slick-list
+          margin: 0 -5px
+          padding: 
+            bottom: 47px
+          order: 1
+
+        .slick-arrow
+          position: relative
+          margin: 0
+          top: auto
+          left: auto
+          right: auto
+          bottom: auto
+
+          &.slick-prev
+            order: 2
+          
+          &.slick-next
+            order: 4
+        
+        .slick-dots
+          position: relative
+          margin: 0 25px
+            top: -12px
+          left: auto
+          bottom: auto
+          +prefix(transform, translate(0))
+          order: 3
+
+          button
+            width: 35px
+
+        .product-item
+          padding: 0 5px
+
+          &-img-wrap
+            min-height: 169px
+          
+          &-name
+            margin:
+              top: 22px
+            font-size: 16px
+            line-height: 19px
+            text-transform: none
+
+      &-link
+        display: block
+        margin: 0 auto
+          top: 15px
+        max-width: 90px
+
+    .news
+      margin:
+        top: 68px
+      
+      &-all
+        display: block
+        margin: 0 auto
+          top: 30px
+        max-width: 130px
+        

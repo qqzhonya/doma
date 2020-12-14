@@ -40,4 +40,58 @@ $(function() {
   });
 
   // Main page advantages - end
+  
+  // Main page popular tab
+
+  $('ul.main-popular-tab-nav').on('click', 'li:not(.active)', function() {
+    $(this)
+      .addClass('active').siblings().removeClass('active')
+      .closest('div.main-popular-tab').find('div.main-popular-tab-elem').removeClass('active').eq($(this).index()).addClass('active');
+  
+    $('.product-slider').slick('refresh')
+  });
+
+  // Main page popular tab - end 
+
+  // Product slider
+
+  $('.product-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    dots: true,
+    arrow: true,
+    infinite: false,
+    speed: 1350.
+  })
+
+  // Product slider - end
+
+  // Animation for done projects 
+
+  // $(window).scroll(startCounter);
+
+  // function startCounter() {
+  //   var hT = $('.main-info-done').offset().top,
+  //       hH = $('.main-info-done').outerHeight(),
+  //       wH = $(window).height();
+    
+  //   console.log('hi')
+
+  //   if($(window).scrollTop() > hT+hH-wH) {
+  //     $(window).off("scroll", startCounter);
+
+  //     $('.main-info-done-val').each(function () {
+  //       var $this = $(this);
+  //       jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
+  //         duration: 5000,
+  //         easing: 'swing',
+  //         step: function () {
+  //           $this.text(Math.ceil(this.Counter));
+  //         }
+  //       });
+  //     });
+  //   }
+  // };
+  
+  // Animation for done projects - end
 });
