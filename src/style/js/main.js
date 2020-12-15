@@ -62,36 +62,22 @@ $(function() {
     arrow: true,
     infinite: false,
     speed: 1350.
-  })
+  });
 
   // Product slider - end
 
-  // Animation for done projects 
+  // Action slider
 
-  // $(window).scroll(startCounter);
+  $('.main-action-wrap').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    dots: true,
+    arrow: true,
+    infinite: true,
+    speed: 2000
+  });
 
-  // function startCounter() {
-  //   var hT = $('.main-info-done').offset().top,
-  //       hH = $('.main-info-done').outerHeight(),
-  //       wH = $(window).height();
-    
-  //   console.log('hi')
-
-  //   if($(window).scrollTop() > hT+hH-wH) {
-  //     $(window).off("scroll", startCounter);
-
-  //     $('.main-info-done-val').each(function () {
-  //       var $this = $(this);
-  //       jQuery({ Counter: 0 }).animate({ Counter: $this.text() }, {
-  //         duration: 5000,
-  //         easing: 'swing',
-  //         step: function () {
-  //           $this.text(Math.ceil(this.Counter));
-  //         }
-  //       });
-  //     });
-  //   }
-  // };
+  // Action slider - end 
   
-  // Animation for done projects - end
+  
 });

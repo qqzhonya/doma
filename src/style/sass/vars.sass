@@ -50,7 +50,26 @@ select
 a
 	text-decoration: none
 	outline: none
-	
+
+.main-wrap
+	+flex
+	position: relative
+	width: 100%
+	min-height: 100%
+	+flex-direction(column)
+	+align-items(center)
+
+.wrap
+	width: 100%
+	-webkit-box-flex: 1
+	-ms-flex: 1 0 auto
+	flex: 1 0 auto
+
+.test-test
+	width: 100%
+	height: 100px
+	background-color: red
+
 .container 
 	margin: 0 auto
 	padding: 0 15px
@@ -135,6 +154,56 @@ a
 		button
 			opacity: 1
 			+box-shadow(0px 0px 4px rgba(0, 0, 0, 0.25))
+
+.slick-nav-bottom
+	+flex()
+	padding: 0
+	+justify-content(center)
+	+align-items(center)
+	+flex-wrap(wrap)
+
+	.slick-list
+		order: 1
+
+	.slick-arrow
+		position: relative
+		margin: 0
+		top: auto
+		left: auto
+		right: auto
+		bottom: auto
+		background-color: transparent
+
+		&.slick-prev
+			left: 10px
+			background-image: url(../img/icon/arrow-ps-l-w.svg)
+			order: 2
+
+			&:not(.slick-disabled):hover
+				background-image: url(../img/icon/arrow-s-l.svg)
+		
+		&.slick-next
+			right: 10px
+			background-image: url(../img/icon/arrow-ps-r-w.svg)
+			order: 4
+
+			&:not(.slick-disabled):hover
+				background-image: url(../img/icon/arrow-s-r.svg)
+
+		&:not(.slick-disabled):hover
+			background-color: #631E01
+		
+	.slick-dots
+		position: relative
+		margin: 0 25px
+			top: -12px
+		left: auto
+		bottom: auto
+		+prefix(transform, translate(0))
+		order: 3
+
+		button
+			width: 35px
 
 .product
 	+flex()
@@ -399,3 +468,73 @@ a
 			text-overflow: ellipsis
 			overflow: hidden
 			+prefix(transition, $default-transition)
+
+.form
+	position: relative
+	margin: 0 auto
+	padding: 0 70px
+		top: 40px
+		bottom: 60px
+	max-width: 600px
+	text-align: center
+	background-color: $white
+	border: 1px solid #DFDFDF
+		radius: 10px
+	
+	&:after
+		content: ''
+		display: block
+		position: absolute
+		left: -60px
+		bottom: -40px
+		width: 160px
+		height: 109px
+		background-image: url(../img/form-leaves.png)
+		background-size: cover
+		background-position: center center
+		background-repeat: no-repeat
+	
+	&-title
+		padding:
+			bottom: 10px
+		font-size: 34px
+		font-weight: 500
+		line-height: 40px
+		color: #000
+		border-bottom: 2px solid #DFDFDF
+	
+	&-desc
+		margin:
+			top: 5px
+			bottom: 40px
+		font-size: 16px
+		font-weight: 500
+		line-height: 19px
+		color: $font-color
+	
+	&-input
+		display: block
+		margin: 0 auto
+			bottom: 15px
+		padding: 12px 18px
+		width: 100%
+		max-width: 365px
+		font-size: 14px
+		font-weight: 500
+		line-height: 16px
+		color: rgba(0, 0, 0, .5)
+		border: 1px solid #C4C4C4
+			radius: 10px
+
+	&-btn
+		margin:
+			top: 15px
+		padding: 9px 23px
+		font-size: 16px
+		font-weight: 700
+		line-height: 19px
+		color: $white
+		background-color: #631E01
+		border: 1px solid #631E01
+			radius: 10px
+

@@ -533,17 +533,12 @@
         top: 70px
 
       .product-slider
-        +flex()
         padding: 0
-        +justify-content(center)
-        +align-items(center)
-        +flex-wrap(wrap)
 
         .slick-list
           margin: 0 -5px
           padding: 
             bottom: 47px
-          order: 1
 
         .slick-arrow
           position: relative
@@ -553,23 +548,10 @@
           right: auto
           bottom: auto
 
-          &.slick-prev
-            order: 2
-          
-          &.slick-next
-            order: 4
-        
         .slick-dots
           position: relative
           margin: 0 25px
             top: -12px
-          left: auto
-          bottom: auto
-          +prefix(transform, translate(0))
-          order: 3
-
-          button
-            width: 35px
 
         .product-item
           padding: 0 5px
@@ -599,4 +581,200 @@
         margin: 0 auto
           top: 30px
         max-width: 130px
+  
+  &-action
+    margin:
+      top: 100px
+    padding:
+      bottom: 20px
+    background-image: url(../img/action-bg.svg)
+    background-size: cover
+    background-position: center bottom -195px
+    background-repeat: no-repeat
+
+    &-wrap
+      padding:
+        top: 90px
+
+      .slick-list
+        margin: 0 -10px
+        padding: 0
+          bottom: 25px
+
+    &-item
+      display: block
+      position: relative
+      margin: 0 10px
+      padding: 54px 0
+      min-height: 284px
+      color: $white
+      border: 1px solid #DFDFDF
+        radius: 10px
+      +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+      overflow: hidden
+
+      &.green
+        background-color: #86EF00
+
+        .main-action-title 
+          background-color: #298300
+      
+      &.yellow
+        background-color: #FFC700
+
+        .main-action-title 
+          background-color: #D7752F
+      
+      &.red
+        background-color: #FF0000
+
+        .main-action-img
+          top: 25px
+
+        .main-action-title 
+          position: relative
+          background-color: rgba(215, 47, 47, 0.5)
+          z-index: 1
+
+          &-text
+            max-width: 410px
         
+        .main-action-desc
+          max-width: 480px
+
+      &.blue
+        background-color: #28D0F5
+
+        .main-action-title 
+          background-color: #2F53D7
+
+    &-img
+      position: absolute
+      top: 0
+      right: 0
+
+    &-title
+      padding: 18px 35px
+      font-size: 32px
+      font-weight: 900
+      line-height: 39px
+      text-transform: uppercase
+    
+      &-text
+        position: relative 
+        max-width: 330px
+        z-index: 1
+
+      &-accent
+        display: block
+        margin:
+          top: 5px
+        font-size: 27px
+        font-weight: 700
+        line-height: 32px
+        text-decoration: underline
+    
+    &-desc
+      position: relative
+      margin:
+        top: 15px
+      padding: 0 35px
+      max-width: 400px
+      font-size: 18px
+      font-weight: 500
+      line-height: 21px
+      z-index: 1
+      
+    &-link
+      display: block
+      margin: 0 auto
+        top: 10px
+      max-width: 70px
+      text-align: center 
+
+  &-stage
+    margin:
+      top: 110px
+
+    &-wrap
+      +flex()
+      margin: 0 -10px
+      +justify-content(center)
+      +flex-wrap(wrap)
+
+    &-item
+      +flex()
+      padding: 0 10px
+        top: 85px
+        bottom: 35px
+      width: 33.33%
+      +align-items(center)
+
+      &-num
+        position: relative
+        width: 100%
+        max-width: 105px
+        min-height: 100px
+        background-image: url(../img/icon/stage.svg)
+        background-size: cover
+        background-position: center center
+        background-repeat: no-repeat
+
+        &-val
+          position: absolute
+          padding:
+            bottom: 9px
+          left: 0
+          bottom: 0px
+          font-size: 77px
+          font-weight: 300
+          line-height: 50px
+          color: rgba(0, 0, 0, .7)
+          background-color: $white
+      
+      &-text
+        padding:
+          left: 25px
+        max-width: 200px
+        font-size: 20px
+        font-weight: 700
+        line-height: 24px
+        color: #000
+
+  &-request
+    position: relative
+    padding:
+      top: 125px
+      bottom: 140px
+    background-image: url(../img/request-bg.jpg)
+    background-size: auto
+    background-position: center top -30px 
+    background-repeat: no-repeat
+
+    &:before
+      content: ''
+      display: block 
+      position: absolute 
+      top: 50%
+      left: 0
+      width: 645px
+      height: 321px
+      background-image: url(../img/hand.png)
+      background-size: 100% auto
+      background-position: center center
+      background-repeat: no-repeat
+      +prefix(transform, translateY(-50%))
+
+    &:after
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      right: 0
+      width: 500px
+      height: 660px
+      background-image: url(../img/family.png)
+      background-size: 100% auto
+      background-position: center center
+      background-repeat: no-repeat
+      
