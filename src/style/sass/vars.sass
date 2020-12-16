@@ -65,16 +65,17 @@ a
 	-ms-flex: 1 0 auto
 	flex: 1 0 auto
 
-.test-test
-	width: 100%
-	height: 100px
-	background-color: red
-
 .container 
 	margin: 0 auto
 	padding: 0 15px
 	width: 100%
 	max-width: 1140px
+
+	&-page-head
+		font-size: 34px
+		font-weight: 500
+		line-height: 40px
+		color: #000
 
 	&-head
 		padding:
@@ -105,6 +106,18 @@ a
 				margin: 0 0 0 auto
 				&:after
 					left: 0
+
+.breadcrumbs
+	+flex
+	margin:
+		top: 30px
+		bottom: 10px
+
+	&-elem
+		font-size: 12px
+		font-weight: 500
+		line-height: 14px
+		color: rgba(0, 0, 0, .3)
 
 .slick-arrow
 	position: absolute
@@ -241,6 +254,19 @@ a
 			object-fit: cover
 			+prefix(transition, $default-transition)
 		
+		&-action-icon
+			display: none
+			position: absolute
+			top: 3px
+			right: 2px
+			width: 42px
+			height: 42px
+			background-image: url(../img/icon/action-item.svg)
+			background-size: cover
+			background-position: center center
+			background-repeat: no-repeat
+			z-index: 10
+
 		&-info
 			padding: 0 18px
 
@@ -348,7 +374,38 @@ a
 			font-weight: 500
 			line-height: 16px
 			color: rgba(0, 0, 0, .6)
-	
+
+		&-price-range
+			+flex
+			margin:
+				top: 15px
+
+			&-elem
+				padding: 8px 5px 13px 5px
+				width: 50%
+				font-size: 14px
+				line-height: 16px
+				text-align: center
+				background-color: $bg-light-green
+
+				&:first-child
+					border:
+						right: 1px solid $white
+
+			&-title
+				font-weight: 400
+				color: rgba(0, 0, 0, .5)
+			
+			&-val
+				margin:
+					top: 5px
+				font-weight: 700
+				color: #000
+
+		&.action
+			.product-item-action-icon
+				display: block
+
 .product-slider
 	position: relative
 	padding: 0 80px
@@ -512,7 +569,8 @@ a
 		line-height: 19px
 		color: $font-color
 	
-	&-input
+	&-input,
+	&-textarea
 		display: block
 		margin: 0 auto
 			bottom: 15px
@@ -526,6 +584,10 @@ a
 		border: 1px solid #C4C4C4
 			radius: 10px
 
+	&-textarea
+		min-height: 110px
+		resize: none
+
 	&-btn
 		margin:
 			top: 15px
@@ -537,4 +599,65 @@ a
 		background-color: #631E01
 		border: 1px solid #631E01
 			radius: 10px
+
+.pagination
+	+flex
+	margin:
+		top: 30px
+	+justify-content(center)
+	+align-items(center)
+
+	&-arrow
+		+flex
+		position: relative
+		width: 50px
+		height: 50px
+		background-color: transparent
+		border-radius: 100px
+		+prefix(transition, $default-transition)
+		+justify-content(center)
+		+align-items(center)
+	
+		&-icon
+			path
+				+prefix(transition, $default-transition)
+
+		&.prev
+			margin:
+				right: 30px
+			.pagination-arrow-icon
+				margin:
+					left: -3px
+		
+		&.next
+			margin:
+				left: 30px
+			.pagination-arrow-icon
+				margin:
+					right: -5px
+
+		&:hover
+			background-color: #631E01
+
+			.pagination-arrow-icon
+				path
+					stroke: $white
+
+	&-elem
+		display: block
+		margin: 0 3px
+		width: 100% 
+		max-width: 45px
+		height: 4px
+		background-color: rgba(104, 47, 19, 0.2)
+		border-radius: 10px
+		+prefix(transition, $default-transition)
+
+		&:not(.active):hover
+			background-color: rgba(104, 47, 19, 0.4)
+
+		&.active
+			background-color: #682F13
+			+box-shadow(0px 0px 4px rgba(0, 0, 0, 0.25))
+
 

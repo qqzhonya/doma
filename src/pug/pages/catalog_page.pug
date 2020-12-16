@@ -1,5 +1,848 @@
 .container
+  .breadcrumbs
+    a(href="").breadcrumbs-elem Главная
+    .breadcrumbs-elem проекты домов
+  .container-page-head Проекты домов из бруса
   .catalog-wrap
-    .catalog-filter
 
+    form(action="").catalog-filter
+
+      .catalog-filter-elem.catalog-filter-price
+        .catalog-filter-elem-title Цена, руб. 
+        .catalog-filter-price-wrap
+          input(type="text" placeholder="от").catalog-filter-input
+          .catalog-filter-price-dash
+          input(type="text" placeholder="до").catalog-filter-input
+        .catalog-filter-segment-wrap
+          button.catalog-filter-segment.active до 300 тыс
+          button.catalog-filter-segment 300-500
+          button.catalog-filter-segment 500-700
+          button.catalog-filter-segment 700+
+      
+      .catalog-filter-elem.catalog-filter-area
+        .catalog-filter-elem-title Площадь, м2
+        .catalog-filter-area-wrap
+          .catalog-filter-area-slider
+            .catalog-filter-area-slider-handle.catalog-filter-area-slider-handle-l.ui-slider-handle
+            .catalog-filter-area-slider-handle.catalog-filter-area-slider-handle-r.ui-slider-handle
+        .catalog-filter-segment-wrap
+          button.catalog-filter-segment.active до 300 тыс
+          button.catalog-filter-segment 300-500
+          button.catalog-filter-segment 500-700
+          button.catalog-filter-segment 700+
+      
+      .catalog-filter-elem
+        .catalog-filter-elem-title Количество этажей
+        .catalog-filter-elem-item-wrap
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 1 этаж
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 2 этаж
+      
+      .catalog-filter-elem.catalog-filter-room
+        .catalog-filter-elem-title Количество комнат
+        .catalog-filter-elem-item-wrap
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 1
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 2
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 3
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 4
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 5
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 6
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7
+        .catalog-filter-hide-btn Показать
+      
+      .catalog-filter-elem.catalog-filter-mod
+        .catalog-filter-elem-title Модификация
+        .catalog-filter-elem-item-wrap
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Терраса
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Балкон
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Эркер
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Веранда
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Крыльцо
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Терраса
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Балкон
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Эркер
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Веранда
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Крыльцо
+        .catalog-filter-hide-btn Показать еще 5
+
+      .catalog-filter-elem
+        .catalog-filter-elem-title Проживание
+        .catalog-filter-elem-item-wrap
+          label.catalog-filter-item
+            input(type="radio" name="catalog-filter-radio-live").catalog-filter-radio
+            span.catalog-filter-item-title 
+              | Постоянное
+              svg(width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg").catalog-filter-item-icon
+                path(d="M17.3494 10.3837L13.7378 11.562L12.2815 10.7703V9.5V8.24806L13.7378 7.4564L17.3494 8.63469C17.6018 8.72674 17.8931 8.57946 17.9708 8.34012C18.0679 8.10077 17.9125 7.82461 17.6601 7.75097L14.864 6.84884L17.4853 5.41279C17.7184 5.28391 17.796 4.98934 17.6601 4.76841C17.5242 4.54748 17.2135 4.47384 16.9805 4.60271L14.3592 6.03876L14.9223 3.29554C14.9805 3.03779 14.8058 2.79845 14.5339 2.74322C14.2621 2.68798 14.0097 2.85368 13.9514 3.11143L13.2135 6.66473L11.7573 7.4564L10.6505 6.84884L10.6311 6.83043L9.50485 6.20446V4.62112L12.3786 2.24612C12.5922 2.08043 12.6116 1.78585 12.4174 1.58333C12.2427 1.38081 11.932 1.3624 11.7184 1.54651L9.50485 3.3876V0.478682C9.50485 0.22093 9.29126 0 9 0C8.72816 0 8.49515 0.202519 8.49515 0.478682V3.35078L6.28158 1.5281C6.06799 1.3624 5.75732 1.38081 5.58256 1.56492C5.4078 1.76744 5.42722 2.06202 5.6214 2.22771L8.49515 4.60271V6.18605L7.36895 6.81202L6.24275 7.43798L4.78645 6.64632L4.0486 3.09302C3.99034 2.83527 3.73792 2.66957 3.46608 2.72481C3.19424 2.78004 3.01948 3.01938 3.07773 3.27713L3.64083 6.02035L1.0195 4.5843C0.786495 4.45543 0.475819 4.52907 0.339898 4.75C0.203977 4.97093 0.281646 5.2655 0.514654 5.39438L3.13598 6.83043L0.339898 7.73256C0.0874738 7.82461 -0.0678644 8.08236 0.029222 8.32171C0.126308 8.56105 0.39815 8.70833 0.650575 8.61628L4.26219 7.43798L5.71848 8.22965V9.5V10.7519H5.7379L4.2816 11.5436L0.669992 10.3653C0.417567 10.2733 0.126308 10.4205 0.0486392 10.6599C-0.0484471 10.8992 0.106891 11.1754 0.359316 11.249L3.1554 12.1512L0.534071 13.5872C0.301064 13.7161 0.223395 14.0107 0.359316 14.2316C0.495236 14.4525 0.805913 14.5262 1.03892 14.3973L3.66025 12.9612L3.09715 15.7045C3.0389 15.9622 3.21365 16.2016 3.4855 16.2568C3.75734 16.312 4.00976 16.1463 4.06801 15.8886L4.80587 12.3353L6.26217 11.5436L7.40778 12.1696L8.53399 12.7955V14.3789L5.66023 16.7539C5.44664 16.9196 5.42722 17.2141 5.6214 17.4167C5.79615 17.6192 6.10683 17.6376 6.32042 17.4535L8.53399 15.6124V18.5213C8.53399 18.7791 8.74758 19 9.03883 19C9.31068 19 9.54368 18.7975 9.54368 18.5213V15.6492L11.7573 17.4903C11.9708 17.656 12.2815 17.6376 12.4563 17.4535C12.631 17.251 12.6116 16.9564 12.4174 16.7907L9.50485 14.3973V12.814L10.6311 12.188L11.7573 11.562L13.2135 12.3537L13.9514 15.907C14.0097 16.1647 14.2621 16.3304 14.5339 16.2752C14.8058 16.22 14.9805 15.9806 14.9223 15.7229L14.3592 12.9797L16.9805 14.4157C17.2135 14.5446 17.5242 14.4709 17.6601 14.25C17.796 14.0291 17.7184 13.7345 17.4853 13.6056L14.864 12.1696L17.6601 11.2674C17.9125 11.1754 18.0679 10.9176 17.9708 10.6783C17.8737 10.439 17.6018 10.2917 17.3494 10.3837ZM11.233 9.5V10.7519L10.1068 11.3779L9 11.9855L7.85438 11.3595L6.72818 10.7335V9.5V8.24806L7.85438 7.62209L8.98058 6.99612L10.1068 7.62209L10.1262 7.6405L11.233 8.24806V9.5Z" fill="black" fill-opacity="0.4")
+          label.catalog-filter-item
+            input(type="radio" name="catalog-filter-radio-live").catalog-filter-radio
+            span.catalog-filter-item-title 
+              | Летние
+              svg(width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg").catalog-filter-item-icon
+                path(d="M4.35547 8.99999C4.35547 11.617 6.53525 13.7461 9.21455 13.7461C11.8939 13.7461 14.0736 11.617 14.0736 8.99999C14.0736 6.383 11.8939 4.25391 9.21455 4.25391C6.53525 4.25391 4.35547 6.383 4.35547 8.99999ZM9.21455 5.30859C11.2985 5.30859 12.9938 6.96455 12.9938 8.99999C12.9938 11.0354 11.2985 12.6914 9.21455 12.6914C7.13065 12.6914 5.43527 11.0354 5.43527 8.99999C5.43527 6.96455 7.13065 5.30859 9.21455 5.30859Z" fill="black" fill-opacity="0.4")
+                path(d="M13.414 13.1018C13.2031 13.3077 13.2031 13.6416 13.414 13.8475L16.0208 16.3938C16.2316 16.5997 16.5735 16.5998 16.7844 16.3938C16.9952 16.1878 16.9952 15.8539 16.7844 15.648L14.1775 13.1018C13.9667 12.8958 13.6248 12.8958 13.414 13.1018Z" fill="black" fill-opacity="0.4")
+                path(d="M2.40799 1.60621C2.19718 1.40027 1.85531 1.40027 1.64446 1.60621C1.43362 1.81216 1.43362 2.14603 1.64446 2.35198L4.25131 4.8982C4.46212 5.10415 4.80399 5.10418 5.01483 4.8982C5.22568 4.69226 5.22568 4.35838 5.01483 4.15243L2.40799 1.60621Z" fill="black" fill-opacity="0.4")
+                path(d="M1.64446 16.3937C1.85528 16.5997 2.19714 16.5997 2.40799 16.3937L5.01483 13.8475C5.22568 13.6416 5.22568 13.3077 5.01483 13.1018C4.80402 12.8958 4.46216 12.8958 4.25131 13.1018L1.64446 15.648C1.43362 15.8539 1.43362 16.1878 1.64446 16.3937Z" fill="black" fill-opacity="0.4")
+                path(d="M16.7844 1.60621C16.5735 1.40027 16.2317 1.40027 16.0208 1.60621L13.414 4.15243C13.2031 4.35838 13.2031 4.69226 13.414 4.8982C13.6248 5.10415 13.9667 5.10418 14.1775 4.8982L16.7844 2.35198C16.9952 2.14603 16.9952 1.81216 16.7844 1.60621Z" fill="black" fill-opacity="0.4")
+                path(d="M11.4858 14.3592C11.2103 14.4706 11.0795 14.7791 11.1936 15.0482L11.6068 16.0226C11.7207 16.2912 12.0363 16.4196 12.3122 16.308C12.5877 16.1965 12.7185 15.888 12.6044 15.619L12.1912 14.6446C12.0771 14.3755 11.7613 14.2478 11.4858 14.3592Z" fill="black" fill-opacity="0.4")
+                path(d="M6.94112 3.64081C7.21661 3.52936 7.34741 3.22087 7.23331 2.95178L6.82011 1.97739C6.70598 1.70831 6.39017 1.58059 6.11468 1.692C5.83919 1.80344 5.70839 2.11194 5.82249 2.38102L6.23569 3.35541C6.34968 3.62408 6.66523 3.75243 6.94112 3.64081Z" fill="black" fill-opacity="0.4")
+                path(d="M3.02242 10.9344L2.02484 11.338C1.74934 11.4494 1.61854 11.7579 1.73264 12.027C1.8466 12.2957 2.16219 12.424 2.43807 12.3124L3.43566 11.9088C3.71116 11.7974 3.84195 11.4889 3.72786 11.2198C3.61376 10.9508 3.29795 10.823 3.02242 10.9344Z" fill="black" fill-opacity="0.4")
+                path(d="M15.4068 7.06552L16.4044 6.66193C16.6799 6.55049 16.8107 6.24199 16.6966 5.97291C16.5825 5.70382 16.2667 5.5761 15.9912 5.68751L14.9936 6.0911C14.7181 6.20255 14.5873 6.51104 14.7014 6.78013C14.8153 7.04879 15.1309 7.17711 15.4068 7.06552Z" fill="black" fill-opacity="0.4")
+                path(d="M6.23569 14.6446L5.82249 15.619C5.70839 15.888 5.83919 16.1965 6.11468 16.308C6.39129 16.4199 6.70645 16.2906 6.82011 16.0226L7.23331 15.0482C7.34741 14.7791 7.21661 14.4707 6.94112 14.3592C6.66559 14.2478 6.34979 14.3755 6.23569 14.6446Z" fill="black" fill-opacity="0.4")
+                path(d="M12.1912 3.35541L12.6044 2.38102C12.7185 2.11194 12.5877 1.80348 12.3122 1.692C12.0367 1.58059 11.7209 1.70831 11.6068 1.97739L11.1936 2.95178C11.0795 3.22087 11.2103 3.52933 11.4858 3.64081C11.7624 3.75268 12.0776 3.62341 12.1912 3.35541Z" fill="black" fill-opacity="0.4")
+                path(d="M3.43566 6.09112L2.43807 5.68752C2.16258 5.57608 1.84678 5.70384 1.73264 5.97292C1.61854 6.24201 1.74934 6.55047 2.02484 6.66195L3.02242 7.06554C3.29903 7.17741 3.61419 7.04814 3.72786 6.78014C3.84195 6.51106 3.71116 6.20256 3.43566 6.09112Z" fill="black" fill-opacity="0.4")
+                path(d="M16.4044 11.338L15.4068 10.9344C15.1313 10.823 14.8155 10.9507 14.7014 11.2198C14.5873 11.4889 14.7181 11.7974 14.9936 11.9089L15.9912 12.3124C16.2678 12.4243 16.5829 12.295 16.6966 12.027C16.8107 11.758 16.6799 11.4495 16.4044 11.338Z" fill="black" fill-opacity="0.4")
+                path(d="M8.67383 15.3281V17.4726C8.67383 17.7638 8.91556 17.9999 9.21373 17.9999C9.51189 17.9999 9.75362 17.7638 9.75362 17.4726V15.3281C9.75362 15.0368 9.51189 14.8007 9.21373 14.8007C8.91556 14.8007 8.67383 15.0368 8.67383 15.3281Z" fill="black" fill-opacity="0.4")
+                path(d="M9.75362 2.67187V0.527343C9.75362 0.236109 9.51189 0 9.21373 0C8.91556 0 8.67383 0.236109 8.67383 0.527343V2.67187C8.67383 2.9631 8.91556 3.19921 9.21373 3.19921C9.51189 3.19921 9.75362 2.9631 9.75362 2.67187Z" fill="black" fill-opacity="0.4")
+                path(d="M0 8.99997C0 9.2912 0.24173 9.52731 0.539898 9.52731H2.73549C3.03365 9.52731 3.27538 9.2912 3.27538 8.99997C3.27538 8.70873 3.03365 8.47263 2.73549 8.47263H0.539898C0.24173 8.47263 0 8.70873 0 8.99997Z" fill="black" fill-opacity="0.4")
+                path(d="M17.8898 8.47263H15.6942C15.396 8.47263 15.1543 8.70873 15.1543 8.99997C15.1543 9.2912 15.396 9.52731 15.6942 9.52731H17.8898C18.1879 9.52731 18.4297 9.2912 18.4297 8.99997C18.4297 8.70873 18.1879 8.47263 17.8898 8.47263Z" fill="black" fill-opacity="0.4")
+      
+      .catalog-filter-elem.catalog-filter-size
+        .catalog-filter-elem-title Модификация
+        .catalog-filter-elem-item-wrap
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 6 х 8
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 6 х 9
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 7
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 8
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 9
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 6 х 8
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 6 х 9
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 7
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 8
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 9
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 6 х 8
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 6 х 9
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 7
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 8
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title 7 х 9
+        .catalog-filter-hide-btn Показать еще 5
+
+      .catalog-filter-elem.catalog-filter-style
+        .catalog-filter-elem-title Стиль
+        .catalog-filter-elem-item-wrap
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Красивый
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Современный
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Оригинальный
+          label.catalog-filter-item
+            input(type="checkbox").catalog-filter-checkbox
+            span.catalog-filter-item-title Хай тек
+      
+      button.catalog-filter-clear Очистить фильтр
+      
     .catalog-product
+      .catalog-product-action
+        .product
+          .product-item.action
+            .product-item-wrap
+              a(href="").product-item-img-wrap
+                img(src="style/img/product-img.jpg", alt="").product-item-img
+                .product-item-action-icon
+              .product-item-info
+                .product-item-name LB-1080
+                .product-item-size 
+                  span 120 м
+                  span 7 х 7
+                  span 2 этажа
+                .product-item-room
+                  .product-item-room-elem 
+                    img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                    span.product-item-room-val 4 
+                    | спальни
+                  .product-item-room-elem 
+                    img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                    span.product-item-room-val 2 
+                    | санузла
+              .product-item-price-range
+                .product-item-price-range-elem
+                  .product-item-price-range-title Под ключ
+                  .product-item-price-range-val от 936 682 руб.
+                .product-item-price-range-elem
+                  .product-item-price-range-title Под усадку
+                  .product-item-price-range-val от 600 000 руб.
+          
+          .product-item.action
+            .product-item-wrap
+              a(href="").product-item-img-wrap
+                img(src="style/img/product-img.jpg", alt="").product-item-img
+                .product-item-action-icon
+              .product-item-info
+                .product-item-name LB-1080
+                .product-item-size 
+                  span 120 м
+                  span 7 х 7
+                  span 2 этажа
+                .product-item-room
+                  .product-item-room-elem 
+                    img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                    span.product-item-room-val 4 
+                    | спальни
+                  .product-item-room-elem 
+                    img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                    span.product-item-room-val 2 
+                    | санузла
+              .product-item-price-range
+                .product-item-price-range-elem
+                  .product-item-price-range-title Под ключ
+                  .product-item-price-range-val от 936 682 руб.
+                .product-item-price-range-elem
+                  .product-item-price-range-title Под усадку
+                  .product-item-price-range-val от 600 000 руб.
+          
+          .product-item.action
+            .product-item-wrap
+              a(href="").product-item-img-wrap
+                img(src="style/img/product-img.jpg", alt="").product-item-img
+                .product-item-action-icon
+              .product-item-info
+                .product-item-name LB-1080
+                .product-item-size 
+                  span 120 м
+                  span 7 х 7
+                  span 2 этажа
+                .product-item-room
+                  .product-item-room-elem 
+                    img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                    span.product-item-room-val 4 
+                    | спальни
+                  .product-item-room-elem 
+                    img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                    span.product-item-room-val 2 
+                    | санузла
+              .product-item-price-range
+                .product-item-price-range-elem
+                  .product-item-price-range-title Под ключ
+                  .product-item-price-range-val от 936 682 руб.
+                .product-item-price-range-elem
+                  .product-item-price-range-title Под усадку
+                  .product-item-price-range-val от 600 000 руб.
+          
+        .catalog-product-action-banner
+          .catalog-product-action-banner-text 
+            | Любой проект из каталога можно заказать 
+            br
+            b "под усадку" 
+            | - это сруб дома или бани 
+          img(src="style/img/action-banner-bg.png", alt="").catalog-product-action-banner-img
+      
+      .catalog-product-filter
+        a(href="").catalog-product-filter-elem.active Дешевле
+        a(href="").catalog-product-filter-elem Дороже
+        a(href="").catalog-product-filter-elem Сначала популярные
+      
+      .product
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+          
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м
+                span 7 х 7
+                span 2 этажа
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+      
+      .pagination
+        a(href="").pagination-arrow.prev
+          svg(width="14" height="27" viewBox="0 0 14 27" fill="none" xmlns="http://www.w3.org/2000/svg").pagination-arrow-icon
+            path(d="M13 26L1 13.5L13 0.999999" stroke="#631E01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+        a(href="").pagination-elem.active
+        a(href="").pagination-elem
+        a(href="").pagination-elem
+        a(href="").pagination-elem
+        a(href="").pagination-elem
+        a(href="").pagination-arrow.next
+          svg(width="14" height="27" viewBox="0 0 14 27" fill="none" xmlns="http://www.w3.org/2000/svg").pagination-arrow-icon
+            path(d="M1 1L13 13.5L1 26" stroke="#631E01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+
+  .catalog-type
+    .catalog-type-elem
+      .catalog-type-title 
+        span.catalog-type-title-text Быстровозводимые
+      .catalog-type-dropdown
+        .catalog-type-dropdown-wrap
+          a(href="").catalog-type-dropdown-link Каркасно-щитовые
+          a(href="").catalog-type-dropdown-link Со вторым светом
+          a(href="").catalog-type-dropdown-link Без отделки
+          a(href="").catalog-type-dropdown-link Сборные
+          a(href="").catalog-type-dropdown-link Небольшие
+          a(href="").catalog-type-dropdown-link На сваях
+    .catalog-type-elem
+      .catalog-type-title 
+        span.catalog-type-title-text Деревянные
+      .catalog-type-dropdown
+        .catalog-type-dropdown-wrap
+          a(href="").catalog-type-dropdown-link Каркасно-щитовые
+          a(href="").catalog-type-dropdown-link Со вторым светом
+          a(href="").catalog-type-dropdown-link Без отделки
+          a(href="").catalog-type-dropdown-link Сборные
+          a(href="").catalog-type-dropdown-link Небольшие
+          a(href="").catalog-type-dropdown-link На сваях
+    .catalog-type-elem
+      .catalog-type-title 
+        span.catalog-type-title-text Недорогие
+      .catalog-type-dropdown
+        .catalog-type-dropdown-wrap
+          a(href="").catalog-type-dropdown-link Каркасно-щитовые
+          a(href="").catalog-type-dropdown-link Со вторым светом
+          a(href="").catalog-type-dropdown-link Без отделки
+          a(href="").catalog-type-dropdown-link Сборные
+          a(href="").catalog-type-dropdown-link Небольшие
+          a(href="").catalog-type-dropdown-link На сваях
+    .catalog-type-elem
+      .catalog-type-title 
+        span.catalog-type-title-text Дачные
+      .catalog-type-dropdown
+        .catalog-type-dropdown-wrap
+          a(href="").catalog-type-dropdown-link Каркасно-щитовые
+          a(href="").catalog-type-dropdown-link Со вторым светом
+          a(href="").catalog-type-dropdown-link Без отделки
+          a(href="").catalog-type-dropdown-link Сборные
+          a(href="").catalog-type-dropdown-link Небольшие
+          a(href="").catalog-type-dropdown-link На сваях
+    .catalog-type-elem
+      .catalog-type-title 
+        span.catalog-type-title-text Коттеджи
+      .catalog-type-dropdown
+        .catalog-type-dropdown-wrap
+          a(href="").catalog-type-dropdown-link Каркасно-щитовые
+          a(href="").catalog-type-dropdown-link Со вторым светом
+          a(href="").catalog-type-dropdown-link Без отделки
+          a(href="").catalog-type-dropdown-link Сборные
+          a(href="").catalog-type-dropdown-link Небольшие
+          a(href="").catalog-type-dropdown-link На сваях
+    .catalog-type-elem
+      .catalog-type-title 
+        span.catalog-type-title-text Зимние
+      .catalog-type-dropdown
+        .catalog-type-dropdown-wrap
+          a(href="").catalog-type-dropdown-link Каркасно-щитовые
+          a(href="").catalog-type-dropdown-link Со вторым светом
+          a(href="").catalog-type-dropdown-link Без отделки
+          a(href="").catalog-type-dropdown-link Сборные
+          a(href="").catalog-type-dropdown-link Небольшие
+          a(href="").catalog-type-dropdown-link На сваях
+
+  .catalog-recent 
+    .container-page-head Недавно просмотренные
+
+    .product
+      .product-item
+        .product-item-wrap
+          a(href="").product-item-img-wrap
+            img(src="style/img/product-img.jpg", alt="").product-item-img
+            .product-item-action-icon
+          .product-item-info
+            .product-item-name LB-1080
+            .product-item-size 
+              span 120 м
+              span 7 х 7
+              span 2 этажа
+            .product-item-room
+              .product-item-room-elem 
+                img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                span.product-item-room-val 4 
+                | спальни
+              .product-item-room-elem 
+                img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                span.product-item-room-val 2 
+                | санузла
+          .product-item-price-range
+            .product-item-price-range-elem
+              .product-item-price-range-title Под ключ
+              .product-item-price-range-val от 936 682 руб.
+            .product-item-price-range-elem
+              .product-item-price-range-title Под усадку
+              .product-item-price-range-val от 600 000 руб.
+      
+      .product-item
+        .product-item-wrap
+          a(href="").product-item-img-wrap
+            img(src="style/img/product-img.jpg", alt="").product-item-img
+            .product-item-action-icon
+          .product-item-info
+            .product-item-name LB-1080
+            .product-item-size 
+              span 120 м
+              span 7 х 7
+              span 2 этажа
+            .product-item-room
+              .product-item-room-elem 
+                img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                span.product-item-room-val 4 
+                | спальни
+              .product-item-room-elem 
+                img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                span.product-item-room-val 2 
+                | санузла
+          .product-item-price-range
+            .product-item-price-range-elem
+              .product-item-price-range-title Под ключ
+              .product-item-price-range-val от 936 682 руб.
+            .product-item-price-range-elem
+              .product-item-price-range-title Под усадку
+              .product-item-price-range-val от 600 000 руб.
+      
+      .product-item
+        .product-item-wrap
+          a(href="").product-item-img-wrap
+            img(src="style/img/product-img.jpg", alt="").product-item-img
+            .product-item-action-icon
+          .product-item-info
+            .product-item-name LB-1080
+            .product-item-size 
+              span 120 м
+              span 7 х 7
+              span 2 этажа
+            .product-item-room
+              .product-item-room-elem 
+                img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                span.product-item-room-val 4 
+                | спальни
+              .product-item-room-elem 
+                img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                span.product-item-room-val 2 
+                | санузла
+          .product-item-price-range
+            .product-item-price-range-elem
+              .product-item-price-range-title Под ключ
+              .product-item-price-range-val от 936 682 руб.
+            .product-item-price-range-elem
+              .product-item-price-range-title Под усадку
+              .product-item-price-range-val от 600 000 руб.
+      
+      .product-item
+        .product-item-wrap
+          a(href="").product-item-img-wrap
+            img(src="style/img/product-img.jpg", alt="").product-item-img
+            .product-item-action-icon
+          .product-item-info
+            .product-item-name LB-1080
+            .product-item-size 
+              span 120 м
+              span 7 х 7
+              span 2 этажа
+            .product-item-room
+              .product-item-room-elem 
+                img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                span.product-item-room-val 4 
+                | спальни
+              .product-item-room-elem 
+                img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                span.product-item-room-val 2 
+                | санузла
+          .product-item-price-range
+            .product-item-price-range-elem
+              .product-item-price-range-title Под ключ
+              .product-item-price-range-val от 936 682 руб.
+            .product-item-price-range-elem
+              .product-item-price-range-title Под усадку
+              .product-item-price-range-val от 600 000 руб.
+    
+.catalog-question
+  img(src="style/img/catalog-question-bg.jpg", alt="").catalog-question-bg
+  .container
+    form(action="").form
+      .form-title Остались вопросы?
+      .form-desc Напишите нам свой вопрос и мы ответим вам в ближайшее время!
+      input(type="text" placeholder="Ваше имя").form-input
+      input(type="text" placeholder="Номер телефона").form-input
+      textarea(name="form-comment" placeholder="Ваш вопрос").form-textarea
+      button.form-btn Отправить заявку

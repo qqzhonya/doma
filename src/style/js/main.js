@@ -79,5 +79,44 @@ $(function() {
 
   // Action slider - end 
   
-  
+  // Filter range slider
+
+  var handle = $('.catalog-filter-area-slider-handle');
+  var handleL = $('.catalog-filter-area-slider-handle-l');
+  var handleR = $('.catalog-filter-area-slider-handle-r');
+
+  $('.catalog-filter-area-slider').slider({
+    range: true,
+    min: 0,
+    max: 1000,
+    values: [ 0, 1000 ],
+    create: function() {
+      handleL.text($(this).slider("values", 0));
+      handleR.text($(this).slider("values", 1));
+    },
+    slide: function( event, ui ) {
+      handleL.text(ui.values[ 0 ]);
+      handleR.text(ui.values[ 1 ])
+    }
+  });
+
+  // Filter range slider - end
+
+  // Show\Hide room
+
+  $('.catalog-filter-hide-btn').click(function() {
+    var parent = $(this).parent();
+
+    $(this).toggleClass('active');
+
+    if($(this).hasClass('active')) {
+      $(this).text('Скрыть');
+      parent.addClass('show');
+    } else {
+      $(this).text('Показать');
+      parent.removeClass('show');
+    }
+  });
+
+  // Show\hide room - end
 });
