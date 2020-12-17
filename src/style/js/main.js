@@ -119,4 +119,137 @@ $(function() {
   });
 
   // Show\hide room - end
+
+  // Map 
+
+  function initMap() {
+		var myMap = new ymaps.Map("contact-map", {
+					center: [60.070834, 30.277870],
+					zoom: 16
+				}, {
+					searchControlProvider: 'yandex#search'
+				});
+    
+    // var placemark = new ymaps.Placemark(myMap.getCenter(), {
+    //   // Зададим содержимое заголовка балуна.
+    //   balloonContentHeader: '<a href = "#">Рога и копыта</a><br>' +
+    //       '<span class="description">Сеть кинотеатров</span>',
+    //   // Зададим содержимое основной части балуна.
+    //   balloonContentBody: '<img src="img/cinema.jpg" height="150" width="200"> <br/> ' +
+    //       '<a href="tel:+7-123-456-78-90">+7 (123) 456-78-90</a><br/>' +
+    //       '<b>Ближайшие сеансы</b> <br/> Сеансов нет.',
+    //   // Зададим содержимое нижней части балуна.
+    //   balloonContentFooter: 'Информация предоставлена:<br/>OOO "Рога и копыта"',
+    //   // Зададим содержимое всплывающей подсказки.
+    //   hintContent: 'Рога и копыта'
+    // });
+    // // Добавим метку на карту.
+    // myMap.geoObjects.add(placemark);
+    // // Откроем балун на метке.
+    // placemark.balloon.open();
+    
+    
+    MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
+      '<div class="popover top">' +
+      '<div class="arrow"></div>' +
+      '<div class="popover-inner">' +
+      '$[[options.contentLayout observeSize minWidth=235 maxWidth=385 minHeight=100 maxHeight=350]]' +
+      '</div>' +
+      '</div>', {
+        
+      build: function () {
+        this.constructor.superclass.build.call(this);
+
+        this._$element = $('.popover', this.getParentElement());
+
+        this.applyElementOffset();
+
+        this._$element.find('.popover-close')
+          .on('click', $.proxy(this.onCloseClick, this));
+      },
+
+      clear: function () {
+        this._$element.find('.popover-close')
+          .off('click');
+
+        this.constructor.superclass.clear.call(this);
+      },
+
+      onSublayoutSizeChange: function () {
+        MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+        if(!this._isElement(this._$element)) {
+          return;
+        }
+
+        this.applyElementOffset();
+
+        this.events.fire('shapechange');
+      },
+
+      applyElementOffset: function () {
+        this._$element.css({
+          left: -(this._$element[0].offsetWidth / 2),
+          top: -(this._$element[0].offsetHeight + this._$element.find('.arrow')[0].offsetHeight)
+        });
+      },
+
+      onCloseClick: function (e) {
+        e.preventDefault();
+
+        this.events.fire('userclose');
+      },
+
+      _isElement: function (element) {
+        return element && element[0] && element.find('.arrow')[0];
+      }
+    }),
+
+    MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<h3 class="popover-title">$[properties.balloonHeader]</h3>' +
+      '<div class="popover-content"><div class="popover-content-wrap">$[properties.balloonContent]</div></div>'
+    ),
+
+		myMap.geoObjects
+			.add(new ymaps.Placemark([60.071788, 30.284404], {
+        balloonContent:
+          '<a class="popover-close" href="#">&times;</a>' + 
+          '<span class="popover-elem time">Пн – Вс <b>09:00-18:00</b></span>' + 
+          '<a class="popover-elem phone" href="tel:+78127777777">+7 (812) 777-77-77</a><br/>' +
+          '<span class="popover-elem place">Санкт-Петербург,Выборгское ш. 212</span>',
+        hintContent: 'г. Санкт-Петербург, Выборгское шоссе 212'
+			}, {
+				// Опции.
+        // Необходимо указать данный тип макета.
+        iconLayout: 'default#image',
+        // Своё изображение иконки метки.
+        iconImageHref: 'style/img/icon/map-pin.png',
+        // Размеры метки.
+        iconImageSize: [38, 60],
+        // Смещение левого верхнего угла иконки относительно
+        // её "ножки" (точки привязки).
+        iconImageOffset: [-15, -55],
+        balloonShadow: false,
+        balloonLayout: MyBalloonLayout,
+        balloonContentLayout: MyBalloonContentLayout,
+        balloonPanelMaxMapArea: 0,
+        // И дополнительно смещаем балун, для открытия над иконкой.
+        balloonOffset: [-40, -100]
+      }));
+    
+    myMap.controls.remove('geolocationControl');
+    myMap.controls.remove('searchControl');
+    myMap.controls.remove('trafficControl');
+    myMap.controls.remove('typeSelector');
+    myMap.controls.remove('fullscreenControl');
+    myMap.controls.remove('rulerControl');
+    myMap.behaviors.disable(['scrollZoom']);
+	}
+  
+
+  if($('#contact-map').length) {
+    ymaps.ready(initMap);
+  }
+
+  // Map - end
 });

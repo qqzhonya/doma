@@ -1,0 +1,221 @@
+.warranty
+  &-header
+    padding: 30px 
+    background-image: url(../img/warranty-head-bg.png)
+    background-size: cover
+    background-position: center center
+    background-repeat: no-repeat
+
+    &-info
+      max-width: 645px
+
+    .breadcrumbs
+      margin: 0
+
+    &-title
+      margin:
+        top: 15px
+      max-width: 530px
+      font-size: 50px
+      font-weight: 700
+      line-height: 65px
+      color: $font-color
+    
+    &-desc
+      margin:
+        top: 15px
+      font-size: 18px
+      font-weight: 500
+      line-height: 25px
+      color: rgba(0, 0, 0, .6)
+
+  &-build-cover
+    margin:
+      top: 50px
+
+    &-wrap
+      position: relative
+      margin:
+        top: 10px
+      min-height: 778px
+      background-image: url(../img/warranty-build-img/warranty-img-bg.svg)
+      background-size: 778px auto
+      background-position: center center
+      background-repeat: no-repeat
+
+    &-elem
+      display: block
+      position: absolute
+      padding:
+        top: 82px
+      width: 253px
+
+      &:nth-child(1),
+      &:nth-child(2)
+        top: 60px
+
+      &:nth-child(1)
+        left: 130px
+      
+      &:nth-child(2)
+        right: 130px
+      
+      &:nth-child(3),
+      &:nth-child(4)
+        top: 50%
+        +prefix(transform, translateY(-65%))
+      
+      &:nth-child(3)
+        left: 55px
+      
+      &:nth-child(4)
+        right: 55px
+      
+      &:nth-child(5),
+      &:nth-child(6)
+        bottom: 130px
+      
+      &:nth-child(5)
+        left: 130px
+      
+      &:nth-child(6)
+        right: 130px
+      
+      &-img
+        display: block
+        position: absolute
+        margin: 0 auto
+        top: 0
+        left: 50%
+        width: 94px
+        height: 94px
+        +prefix(transform, translateX(-50%))
+
+      &-name
+        position: relative
+        width: 100%
+        min-height: 90px
+        font-size: 18px
+        font-weight: 700
+        line-height: 90px
+        color: $font-color
+        text-align: center
+
+        &:after
+          content: ''
+          position: absolute
+          top: 0
+          left: 0
+          width: 100%
+          height: 100%
+          background-image: url(../img/warranty-build-img/warranty-elem-bg.svg)
+          background-size: cover
+          background-position: center center
+          background-repeat: no-repeat
+          z-index: 0
+
+        &-text
+          position: relative
+          z-index: 1
+
+  &-cover
+    margin:
+      top: 30px
+
+    &-wrap
+      +flex
+      margin: 0 -15px
+        top: 30px
+
+    &-elem
+      +flex
+      padding: 0 15px
+      +align-items(center)
+
+    &-img-wrap
+      +flex
+      min-width: 160px
+      height: 160px
+      background-image: url(../img/warranty-cover-img/warranty-cover-bg.svg)
+      background-size: cover
+      background-position: center center
+      background-repeat: no-repeat
+      +justify-content(center)
+      +align-items(center)
+    
+    &-text
+      margin:
+        left: 15px
+      font-size: 18px
+      font-weight: 500
+      line-height: 21px
+      color: $font-color
+  
+  &-term
+    margin:
+      top: 65px
+    
+    &-wrap
+      +flex
+      margin: 0 -15px
+        top: 80px
+      padding:
+        bottom: 92px
+    
+    &-elem
+      padding: 0 15px
+      width: 50%
+
+      &.grey
+        .warranty-term-elem-wrap
+          background: -o-linear-gradient(1.49deg, #828282 5.54%, #DEDEDE 90.17%)
+          background: linear-gradient(88.51deg, #828282 5.54%, #DEDEDE 90.17%)
+      
+      &.yellow
+        .warranty-term-elem-wrap
+          background: -o-linear-gradient(1.49deg, #CD9607 5.54%, #FFDD66 90.17%)
+          background: linear-gradient(88.51deg, #CD9607 5.54%, #FFDD66 90.17%)
+
+      &-wrap
+        position: relative
+        padding: 26px 35px 30px 35px
+        width: 100%
+        min-height: 175px 
+        border-radius: 10px
+
+      &-text
+        display: inline-block
+        font-size: 24px
+        font-weight: 500
+        line-height: 28px
+        color: $white
+
+        b
+          font-weight: 900
+      
+      &-img
+        position: absolute
+        top: -20px
+        right: -10px
+    
+    &-note
+      margin: 0 auto
+        top: 10px
+      max-width: 555px
+      font-size: 18px
+      font-weight: 700
+      line-height: 21px
+      color: $font-color
+      text-align: center
+
+  &-question
+    padding:
+      top: 140px
+      bottom: 110px
+    background-image: url(../img/request-bg.jpg)
+    background-size: auto
+    background-position: center top
+    background-repeat: no-repeat
+
+
+  
