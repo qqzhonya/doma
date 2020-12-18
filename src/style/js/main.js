@@ -81,7 +81,6 @@ $(function() {
   
   // Filter range slider
 
-  var handle = $('.catalog-filter-area-slider-handle');
   var handleL = $('.catalog-filter-area-slider-handle-l');
   var handleR = $('.catalog-filter-area-slider-handle-r');
 
@@ -129,25 +128,6 @@ $(function() {
 				}, {
 					searchControlProvider: 'yandex#search'
 				});
-    
-    // var placemark = new ymaps.Placemark(myMap.getCenter(), {
-    //   // Зададим содержимое заголовка балуна.
-    //   balloonContentHeader: '<a href = "#">Рога и копыта</a><br>' +
-    //       '<span class="description">Сеть кинотеатров</span>',
-    //   // Зададим содержимое основной части балуна.
-    //   balloonContentBody: '<img src="img/cinema.jpg" height="150" width="200"> <br/> ' +
-    //       '<a href="tel:+7-123-456-78-90">+7 (123) 456-78-90</a><br/>' +
-    //       '<b>Ближайшие сеансы</b> <br/> Сеансов нет.',
-    //   // Зададим содержимое нижней части балуна.
-    //   balloonContentFooter: 'Информация предоставлена:<br/>OOO "Рога и копыта"',
-    //   // Зададим содержимое всплывающей подсказки.
-    //   hintContent: 'Рога и копыта'
-    // });
-    // // Добавим метку на карту.
-    // myMap.geoObjects.add(placemark);
-    // // Откроем балун на метке.
-    // placemark.balloon.open();
-    
     
     MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
       '<div class="popover top">' +
@@ -252,4 +232,21 @@ $(function() {
   }
 
   // Map - end
+
+  // Product prev slider
+
+  $('.product-prev-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrow: true,
+    infinite: false,
+  });
+
+  $('.product-prev-slider-nav-item').on( 'click', function () {
+    $(this).addClass('active').siblings().removeClass('active');
+
+		$('.product-prev-slider').slick( 'slickGoTo', jQuery($(this)).data('slick-index'));
+	} );
+
+  // Product prev slider - end
 });

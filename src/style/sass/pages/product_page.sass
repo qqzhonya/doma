@@ -1,0 +1,410 @@
+.product
+  &-top
+    background-color: #f7f7f8
+
+    .breadcrumbs
+      margin:
+        top: 0
+      padding:
+        top: 30px
+
+  &-page-head
+    +flex
+    +align-items(center)
+
+    &-nav
+      +flex
+      margin: 0 0 0 auto
+      padding:
+        left: 15px
+
+      &-elem
+        +flex
+        width: 40px
+        height: 40px
+        background-color: transparent
+        border-radius: 100px
+        +prefix(transition, $default-transition)
+        +justify-content(center)
+        +align-items(center)
+
+        &:hover
+          background-color: #682F13
+
+          .product-page-head-nav-arrow
+            path
+              stroke: $white
+
+        &.prev
+          margin:
+            right: 35px
+          .product-page-head-nav-arrow
+            margin:
+              left: -3px
+        
+        &.next
+          .product-page-head-nav-arrow
+            margin:
+              right: -3px
+      
+      &-arrow
+        max-width: 10px
+
+        path
+          +prefix(transition, $default-transition)
+
+  &-wrap
+    +flex
+    margin:
+      top: 30px
+  
+  &-prev-slider-wrap
+    width: 65.77%
+  
+  &-prev-slider
+    &-item
+      position: relative
+      padding:
+        bottom: 12.5%
+      width: 100%
+      background-color: grey
+      border-radius: 10px
+      overflow: hidden
+
+      &-img
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+    
+    .slick-arrow
+      position: absolute
+      top: 50%
+      bottom: auto
+      background-color: transparent
+      +prefix(transform, translateY(-50%))
+
+      &:hover
+        background-color: rgba(255, 255, 255, 0.5)
+
+      &.slick-prev
+        left: 10px
+        background-image: url(../img/icon/arrow-s-l.svg)
+
+      &.slick-next
+        right: 10px
+        background-image: url(../img/icon/arrow-s-r.svg)
+
+    &-nav
+      +flex
+      margin: 0 -8px
+        top: 11px
+      +flex-wrap(wrap)
+
+      &-item
+        padding: 7px 8px
+        width: 25%
+        cursor: pointer
+
+        &.active
+          .product-prev-slider-nav-item-wrap
+            border-color: $green-color
+      
+        &-wrap
+          position: relative
+          padding:
+            bottom: 75%
+          width: 100%
+          max-width: 169px
+          background-color: #f7f7f8
+          border: 1px solid #dfdfdf
+            radius: 10px
+          +prefix(transition, $default-transition)
+            
+          
+        &-img
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          width: 100%
+          height: 100%
+      
+
+  &-sidebar-wrap
+    padding:
+      left: 25px
+    width: 34.23%
+
+  &-sidebar
+    padding: 35px 23px 0 23px
+    background-color: $white
+    border: 1px solid #DFDFDF
+      radius: 10px
+    +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+    overflow: hidden
+
+    &-elem
+      padding:
+        bottom: 18px
+      border:
+        bottom: 1px solid #808080
+
+    &-size
+      +flex
+      margin:
+        bottom: 10px
+      font-size: 20px
+      line-height: 24px
+      white-space: nowrap
+      +justify-content(space-between)
+      
+      &:last-child
+        margin:
+          bottom: 0
+      
+      &-name
+        +flex
+        width: 100%
+        font-weight: 400
+        color: rgba(0, 0, 0, .5)
+        +align-items(flex-end)
+
+        &:after
+          content: ''
+          display: block
+          margin:
+            bottom: 3px
+          width: 100% 
+          border-top: 2px dotted rgba(0, 0, 0, .5)
+      
+      &-val
+        padding:
+          left: 20px
+        font-weight: 700
+        color: #000
+
+    &-radio
+      position: relative
+      padding: 0 15px
+      cursor: pointer
+
+      &-wrap
+        margin: 0 -15px
+          top: 10px
+
+      &-btn
+        &:checked,
+        &:not(:checked)
+          position: absolute
+          left: -9999px
+          width: 0
+          height: 0
+      
+        &:checked + .product-sidebar-radio-elem:before
+          width: 11px
+          height: 11px
+          border: 2px solid #631E01
+          
+        &:checked + .product-sidebar-radio-elem:after
+          top: 7px
+          left: 19px
+          width: 7px
+          height: 7px
+          background-color: #631E01
+
+        &:checked + .product-sidebar-radio-elem
+          font-weight: 700
+          color: #682F13
+    
+      &-elem
+        padding: 
+          left: 20px
+
+        &:before,
+        &:after
+          content: ''
+          display: block
+          position: absolute
+          top: 0
+          left: 15px
+          border:
+            radius: 100px
+        
+        &:before
+          top: 3px
+          width: 13px
+          height: 13px
+          border: 1px solid rgba(0, 0, 0, 0.5)
+    
+    &-table
+      margin:
+        top: 20px
+
+      &-head,
+      &-row
+        +flex
+        padding:
+          bottom: 8px
+      
+      &-head
+        font-size: 20px
+        font-weight: 700
+        line-height: 24px
+        color: $font-color
+
+      &-row
+        margin: 0 -23px
+        padding:
+          left: 23px
+          right: 23px
+        cursor: pointer
+        
+        &:not(.active):hover
+          background-color: #f7f7f8
+
+        &.active
+          border: 1px solid #FF0000
+
+      
+      &-elem
+        &:first-child
+          padding:
+            right: 10px
+          width: 42.16%
+        
+        &:last-child 
+          width: 57.84%
+      
+      &-size
+        +flex
+        +align-items(center)
+
+        &-img-wrap
+          margin:
+            right: 10px
+          width: 35px 
+      
+      &-price
+        &-current
+          font-size: 18px
+          font-weight: 700
+          line-height: 21px
+          color: #000
+        
+        &-next
+          margin:
+            top: 3px
+          font-size: 14px
+          font-weight: 400
+          line-height: 16px
+          color: rgba(0, 0 , 0, .5)
+    
+    &-note
+      margin:
+        top: 8px
+
+      &-text
+        display: block
+        font-size: 14px
+        font-weight: 400
+        line-height: 19px
+        color: rgba(0, 0, 0, .5)
+
+      &-link
+        color:  rgba(0, 0, 0, .5)
+        text-decoration: underline
+
+        &:hover
+          color: rgba(0, 0, 0, .7)
+  
+    &-order
+      display: block
+      margin:
+        top: 28px
+      padding: 11px 10px 12px 10px
+      width: 100%
+      font-size: 16px
+      font-weight: 700
+      line-height: 19px
+      color: $white
+      text-align: center
+      border: 2px solid $green-color
+      background-color: $green-color
+      border-radius: 10px
+      +prefix(transition, $default-transition)
+
+      &:hover
+        color: $green-color
+        background-color: $white
+
+    &-info
+      margin:
+        top: 20px
+
+      &-elem
+        +flex
+        margin:
+          bottom: 8px
+        font-size: 18px
+        font-weight: 700
+        line-height: 21px
+        color: #000
+        +align-items(center)
+
+        &-icon
+          margin:
+            right: 13px
+          max-width: 25px
+          height: auto
+    
+    &-footer
+      margin: 0 -23px
+      padding: 19px 23px 10px 23px
+      background-color: #F7F7F8
+
+      &-title
+        padding: 
+          left: 31px
+        font-size: 18px
+        font-weight: 800
+        line-height: 21px
+        color: $green-color
+        text-transform: uppercase
+      
+      &-elem
+        position: relative
+        margin:
+          top: 14px
+        padding:
+          left: 31px
+        font-size: 16px
+        font-weight: 400
+        line-height: 21px 
+        color: $font-color
+
+        &:before
+          content: ''
+          display: block
+          position: absolute
+          top: 2px
+          left: 0
+          width: 16px 
+          height: 16px
+          background-image: url(../img/icon/checkmark-g.svg)
+          background-size: 100% auto
+          background-position: center center
+          background-repeat: no-repeat
+        
+        span
+          font-size: 18px
+          font-weight: 900
+          line-height: 21px
+          color: $green-color
+
+
