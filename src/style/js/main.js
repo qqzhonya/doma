@@ -242,11 +242,22 @@ $(function() {
     infinite: false,
   });
 
-  $('.product-prev-slider-nav-item').on( 'click', function () {
+  $('.product-prev-slider-nav-item').on('click', function () {
     $(this).addClass('active').siblings().removeClass('active');
 
 		$('.product-prev-slider').slick( 'slickGoTo', jQuery($(this)).data('slick-index'));
 	} );
 
   // Product prev slider - end
+
+  // Product complect nav
+
+  $('ul.product-complect-nav').on('click', 'li:not(.active)', function() {
+    $(this)
+      .addClass('active').siblings().removeClass('active')
+      .closest('div.product-complect').find('div.product-complect-elem').removeClass('active').eq($(this).index()).addClass('active');
+  
+  });
+
+  // Product complect nav - end
 });

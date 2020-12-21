@@ -1,5 +1,7 @@
 .product
   &-top
+    padding:
+      bottom: 50px
     background-color: #f7f7f8
 
     .breadcrumbs
@@ -135,7 +137,6 @@
           width: 100%
           height: 100%
       
-
   &-sidebar-wrap
     padding:
       left: 25px
@@ -250,7 +251,9 @@
       &-row
         +flex
         padding:
+          top: 4px
           bottom: 8px
+        +align-items(flex-start)
       
       &-head
         font-size: 20px
@@ -259,6 +262,7 @@
         color: $font-color
 
       &-row
+        position: relative
         margin: 0 -23px
         padding:
           left: 23px
@@ -268,9 +272,26 @@
         &:not(.active):hover
           background-color: #f7f7f8
 
-        &.active
+        &.action
           border: 1px solid #FF0000
 
+          .product-sidebar-table-size
+            color: #FF0000
+
+          .product-sidebar-table-price-next
+            color: #FF0000
+          
+          &:before
+            content: ''
+            position: absolute
+            top: 5px
+            right: 5px
+            width: 12px
+            height: 14px
+            background-image: url(../img/icon/percent.svg)
+            background-size: auto
+            background-position: center center
+            background-repeat: no-repeat 
       
       &-elem
         &:first-child
@@ -287,10 +308,12 @@
 
         &-img-wrap
           margin:
-            right: 10px
+            right: 5px
           width: 35px 
       
       &-price
+        margin:
+          top: 5px
         &-current
           font-size: 18px
           font-weight: 700
@@ -304,6 +327,20 @@
           font-weight: 400
           line-height: 16px
           color: rgba(0, 0 , 0, .5)
+        
+        &-action
+          font-size: 18px
+          font-weight: 700
+          line-height: 21px
+          color: #FF0000
+
+          &-old
+            margin:
+              left: 5px
+            font-size: 14px
+            font-weight: 400
+            line-height: 16px
+            text-decoration: line-through
     
     &-note
       margin:
@@ -406,5 +443,365 @@
           font-weight: 900
           line-height: 21px
           color: $green-color
+
+  &-qinfo
+    +flex
+    margin: 0 -10px
+    padding: 50px 0
+
+    &-elem
+      padding: 0 10px
+      width: 20%
+      text-align: center
+
+    &-head
+      display: inline-block
+      position: relative
+      font-size: 50px
+      font-weight: 700
+      line-height: 60px
+      color: $green-color
+
+      &-text
+        position: relative
+        z-index: 1
+
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        margin:
+          top: -20px
+        top: 50%
+        right: -22px
+        width: 45px
+        height: 45px
+        background-color: rgba(163, 255, 120, 0.4)
+        border-radius: 100px
+        z-index: 0
+    
+    &-desc
+      margin:
+        top: 17px
+      font-size: 20px
+      font-weight: 700
+      line-height: 24px
+      color: #000
+
+  &-height
+    padding:
+      top: 44px
+      bottom: 12px
+    background-color: #F4EBD4
+
+    &-wrap
+      +flex
+      margin: 0 -10px
+      +justify-content(space-between)
+
+    &-elem
+      padding: 0 10px
+
+      &-wrap
+        +flex
+
+    &-title
+      margin:
+        bottom: 10px
+      font-size: 20px
+      font-weight: 700
+      line-height: 24px
+      color: #000
+
+    &-info
+      padding: 
+        left: 15px
+
+      &-row
+        +flex
+        font-size: 18px
+        line-height: 21px
+        +justify-content(space-between)
+      
+      &-name
+        font-weight: 400
+        color: rgba(0, 0, 0, .5)
+      
+      &-val
+        padding:
+          left: 20px
+        font-weight: 700
+        color: #000
+    
+      &-desc
+        max-width: 230px
+        font-size: 18px
+        font-weight: 400
+        line-height: 24px
+        color: #000
+      
+      &-note
+        margin:
+          top: 20px
+        font-size: 14px
+        font-weight: 400
+        line-height: 16px
+        color: rgba(0, 0, 0, .3)
+  
+  &-complect
+    margin:
+      top: 80px
+
+    &-nav
+      +flex
+      margin:
+        top: 24px
+        bottom: 40px
+      max-width: 570px
+      border: 1px solid #682F13
+        radius: 10px
+      list-style-type: none
+      +justify-content(space-between)
+
+      &-elem
+        margin: -1px
+        padding: 16px 10px 17px 10px
+        width: 50%
+        font-size: 20px
+        font-weight: 700
+        line-height: 24px
+        color: rgba(0, 0, 0, .5)
+        border-radius: 10px
+        text-align: center
+        cursor: pointer
+        +prefix(transition, $default-transition)
+
+        &.active
+          color: $white
+          background-color: #682F13
+          +box-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))
+
+    &-elem
+      display: none
+
+      &.active
+        display: block
+
+    &-table
+      +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+      border-radius: 10px
+      overflow: hidden
+
+      &.add
+        margin:
+          top: 70px
+        background-color: rgba(163, 255, 120, 0.3)
+
+        .product-complect-table-head 
+          background-color: rgba(137, 224, 96, 0.9)
+
+        .product-complect-table-row
+          border-color: #427834
+
+        .product-complect-table-desc
+          width: 60.6%
+        
+        .product-complect-table-price
+          margin: 0 0 0 auto
+          padding:
+            left: 20px
+          width: 6.85%
+
+      &-body
+        position: relative
+        padding: 0 30px
+          top: 65px
+          bottom: 65px
+        border: 1px solid #DFDFDF
+          top: 0
+          bottom: 0
+
+        &:last-child
+          padding:
+            bottom: 35px
+          border:
+            bottom-left-radius: 10px
+            bottom-right-radius: 10px
+        
+        &.disabled
+          opacity: .5
+
+      &-head
+        position: absolute
+        padding: 0 10px
+          top: 21px
+          bottom: 20px
+        top: 0
+        left: -1px
+        width: calc(100% + 2px)
+        font-size: 20px
+        font-weight: 700
+        line-height: 24px
+        color: #000
+        border:
+          top-left-radius: 10px
+          top-right-radius: 10px
+        text-align: center
+        background-color: #F4EBD4
+
+        &-img
+          position: absolute
+          top: 0
+          right: 0
+          max-width: 95px
+
+          img
+            width: 100%
+      
+      &-row
+        +flex
+        padding:
+          top: 20px
+          bottom: 20px
+        border:
+          bottom: 3px solid #F7F7F8
+
+        &:last-child
+          border: 0
+        
+      &-name
+        +flex
+        width: 32.07%
+
+        &-text
+          font-size: 18px
+          font-weight: 700
+          line-height: 21px
+          color: #000
+          max-width: 290px
+        
+        &-img
+          position: relative
+          margin: 0 0 0 auto
+          padding:
+            left: 10px
+
+          &-number
+            position: absolute
+            padding: 2px 7px 4px 7px
+            top: -7px
+            right: -7px
+            font-size: 10px
+            font-weight: 400
+            line-height: 12px
+            color: $white
+            background-color: $green-color
+            border-radius: 100px
+
+      &-desc
+        padding:
+          left: 35px
+        width: 63.06%
+
+      &-text
+        font-size: 16px
+        font-weight: 400
+        line-height: 21px
+        color: $font-color
+      
+      &-action
+        margin:
+          left: 10px
+        padding: 3px 7px 5px 7px
+        font-size: 11px
+        font-weight: 700
+        line-height: 13px
+        color: #20A22D
+        text-transform: uppercase
+        border: 1px solid $green-color
+          radius: 7px
+
+      &-sum
+        +flex
+        margin:
+          top: 30px
+
+        &-elem
+          +flex
+          padding: 0 10px
+            top: 10px
+            bottom: 30px
+          width: 33.33%
+          border:
+            right: 3px solid #F7F7F8
+          +flex-flow(column)
+          +align-items(center)
+
+          &:last-child
+            border: 0
+        
+        &-size
+          +flex
+          font-size: 18px
+          font-weight: 400
+          line-height: 21px
+          color: #000
+          +align-items(center)
+          
+          img
+            margin:
+              right: 10px
+        
+        &-val
+          margin:
+            top: 40px
+          font-size: 20px
+          font-weight: 700
+          line-height: 24px
+          color: #000
+          text-align: center
+
+    &-size
+      +flex
+      font-size: 16px
+      font-weight: 400
+      line-height: 21px
+      color: $font-color
+      +align-items(center)
+
+      &-title
+        margin:
+          right: 30px
+
+      &-elem
+        +flex
+        margin:
+          right: 15px
+        font-weight: 500
+        +align-items(center)
+
+        &:last-child
+          margin:
+            right: 0
+      
+      &-img
+        margin:
+          right: 7px
+  
+  &-similar
+    margin:
+      top: 95px
+      
+    .product-slider
+      margin:
+        top: 55px
+
+  &-callback
+    padding: 150px 0
+    background-image: url(../img/request-bg.jpg)
+    background-size: auto
+    background-position: center top -30px
+    background-repeat: no-repeat
+
 
 

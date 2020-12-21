@@ -93,7 +93,9 @@ a
 
 		&-text
 			display: inline-block
-			position:  relative
+			position: relative
+			padding:
+				bottom: 0
 			font-size: 34px
 			font-weight: 500
 			line-height: 40px
@@ -104,7 +106,7 @@ a
 				display: block
 				position: absolute
 				right: 0
-				bottom: -10px
+				bottom: 0px
 				width: 1000%
 				height: 2px
 				background-color: #DAFFC9
@@ -621,6 +623,12 @@ a
 		background-color: #631E01
 		border: 1px solid #631E01
 			radius: 10px
+		+prefix(transition, $default-transition)
+		cursor: pointer
+
+		&:hover
+			color: #631E01
+			background-color: $white
 
 .pagination
 	+flex
@@ -700,4 +708,111 @@ a
 		&:hover
 			opacity: $default-opacity
 
+.faq
+	padding:
+		bottom: 50px
 
+	.container-head
+		+flex
+		
+		&-text
+			margin:
+				right: 10px
+	
+	&-btn
+		margin: 0 0 0 auto
+		padding: 12px 30px 13px 30px
+		font-size: 16px
+		font-weight: 700
+		line-height: 19px
+		color: $white
+		background-color: #631E01
+		border: 1px solid #631E01
+			radius: 10px
+		+prefix(transition, $default-transition)
+		cursor: pointer
+
+		&:hover
+			color: #631E01
+			background-color: $white
+	
+	&-wrap
+		margin:
+			top: 47px
+
+	&-elem
+		margin:
+			bottom: 13px
+		padding: 30px
+			top: 18px
+		background-color: $white
+		border: 1px solid #DFDFDF
+			radius: 10px
+		+box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+	
+		&:last-child
+			margin:
+				bottom: 0
+
+	&-name
+		font-size: 18px
+		font-weight: 700
+		line-height: 21px
+		color: #000
+	
+	&-question
+		margin:
+			top: 7px
+		font-size: 16px
+		font-weight: 500
+		font-style: italic
+		line-height: 19px
+		color: #000
+	
+	&-answer
+		margin:
+			top: 7px
+		padding:
+			top: 14px
+		border:
+			top: 2px solid #C4C4C4
+		font-size: 14px
+		line-height: 16px
+		color: #7B7B7B
+		
+		&-title
+			font-weight: 400
+
+		&-text 
+			margin:
+				top: 7px
+			font-weight: 300
+			font-style: italic
+
+	&-all
+		display: block
+		position: relative
+		margin: 0 auto
+			top: 35px
+		padding:
+			right: 15px
+		max-width: 110px
+		font-size: 14px
+		font-weight: 500
+		line-height: 16px
+		color: #631E01
+
+		&:after
+			content: ''
+			display: block
+			position: absolute
+			margin:
+				top: -2px
+			top: 50%
+			right: 0
+			width: 12px 
+			height: 7px
+			background-image: url(../img/icon/arrow-d-f.svg)
+			background-size: 100% auto
+			background-position: center center
+			background-repeat: no-repeat
