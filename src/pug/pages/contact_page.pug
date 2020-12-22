@@ -41,14 +41,35 @@
           a(href="").contact-map-control-link Вызвать такси
           a(href="").contact-map-control-link
             img(src="style/img/icon/y-taxi.svg", alt="")
+  .contact-map-control.contact-map-control-sm
+    .contact-map-control-elem
+      a(href="").contact-map-control-link
+        img(src="style/img/icon/y-nav.svg", alt="")
+      a(href="").contact-map-control-link
+        img(src="style/img/icon/y-pin.svg", alt="")
+    
+    .contact-map-control-elem
+      a(href="").contact-map-control-link
+        img(src="style/img/icon/y-taxi.svg", alt="")
 
 .contact-feedback
   .container
     form(action="").form
-      .form-title Оставте нам зявку
-      .form-desc И мы построим Вам дом без головной боли
+      .form-title Форма обратной связи
+      .form-desc 
+        | Воспользуйтесь формой или пишите на почту 
+        a(href="") info@zagorod-standart.ru
       input(type="text" placeholder="Ваше имя").form-input
       input(type="text" placeholder="Номер телефона").form-input
+      textarea(name="form-comment" placeholder="Сообщение").form-textarea
+      label.form-file
+        input(type="file").form-file-input
+        .form-file-wrap
+          .form-file-title Переретащите сюда файл 
+          .form-file-delimer или 
+          .form-file-btn Выберете файл
+        .form-file-name 
+        .form-file-note Максимальный размер файла: 2МВ.
       button.form-btn Отправить заявку    
 
 .contact-footer

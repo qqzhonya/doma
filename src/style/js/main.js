@@ -31,11 +31,11 @@ $(function() {
     if($(this).hasClass('active')) {
       $(this).text('Свернуть все преимущества');
 
-      $('.main-advantages-elem:nth-child(n+6)').addClass('active');
+      $('.main-advantages-elem').addClass('active');
     } else {
       $(this).text('Показать все преимущества');
 
-      $('.main-advantages-elem:nth-child(n+6)').removeClass('active');
+      $('.main-advantages-elem').removeClass('active');
     }
   });
 
@@ -61,7 +61,23 @@ $(function() {
     dots: true,
     arrow: true,
     infinite: false,
-    speed: 1350.
+    speed: 1350,
+    responsive: [
+      {
+        breakpoint: 940,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 530,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      }
+    ],
   });
 
   // Product slider - end
@@ -224,14 +240,41 @@ $(function() {
     myMap.controls.remove('fullscreenControl');
     myMap.controls.remove('rulerControl');
     myMap.behaviors.disable(['scrollZoom']);
+
+    function onResizeMap() {
+      if ($(window).width() > '761') { 
+        //Set New center
+        myMap.setCenter([60.070834, 30.277870]);
+      } else {
+        myMap.setCenter([60.071788, 30.284404]);
+      }
+    } onResizeMap();
+
+    window.onresize = function () {
+        onResizeMap();
+    };
 	}
   
-
   if($('#contact-map').length) {
     ymaps.ready(initMap);
   }
 
   // Map - end
+
+  // Form file 
+
+  $(".form-file-input").on("change", function () {
+    var name = $(this)[0].files[0].name;
+    if(name.length > 15) {
+      $(this).parent().find(".form-file-name ").text(name.substring(0, 5) + '...' + name.slice(name.length - 6));
+    } else {
+      $(this).parent().find(".form-file-name").text(name);
+    }
+    
+    $('.main-page_order-file-preview-delete').show();
+  });
+
+  // Form file - end
 
   // Product prev slider
 
@@ -256,8 +299,51 @@ $(function() {
     $(this)
       .addClass('active').siblings().removeClass('active')
       .closest('div.product-complect').find('div.product-complect-elem').removeClass('active').eq($(this).index()).addClass('active');
-  
   });
 
   // Product complect nav - end
+
+  // Mobile menu open
+  
+  $('.header-menu-btn').click(function() {
+    $(this).toggleClass('active');
+
+    $('.mobile-menu').fadeOut();
+
+    if($(this).hasClass('active')) {
+      $('.mobile-menu').fadeIn();
+    }
+  });
+
+  // Mobile menu open - end
+
+  // Mobile menu dropdown
+
+  $('.mobile-menu-list-elem.toggle').click(function() {
+    var parent = $(this).parent()
+
+    parent.toggleClass('active').siblings().removeClass('active');
+    
+    $('.mobile-menu-dropdown').slideUp();
+
+    if(parent.hasClass('active')) {
+      parent.find('.mobile-menu-dropdown').slideDown();
+    }
+  });
+
+  // Mobile menu dropdown - end
+
+  // Mobile open filter 
+
+  $('.catalog-filter-btn').click(function() {
+    $(this).toggleClass('active');
+
+    $('.catalog-filter').slideUp();
+
+    if($(this).hasClass('active')) {
+      $('.catalog-filter').slideDown();
+    }
+  });
+
+  // Mobile open filter - end
 });

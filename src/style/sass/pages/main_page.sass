@@ -12,14 +12,14 @@
       background-color: rgba(99, 30, 1, .5)
 
       &.slick-prev
-        left: 20%
+        left: 15px
         background-image: url(../img/icon/arrow-s-l.svg)
 
       &.slick-next
-        right: 20%
+        right: 15px
         background-image: url(../img/icon/arrow-s-r.svg)
       
-      &:not(.slick-disabled):hover
+      &:hover
         background-color: rgba(99, 30, 1, 1)
 
     .slick-dots
@@ -39,21 +39,15 @@
       bottom: 0
       width: 100%
       height: 100%
+      background-image: url(../img/slider-bg.jpg)
+      background-size: cover
+      background-position: center center
+      background-repeat: no-repeat
       z-index: 0
-
-      img
-        position: absolute
-        top: 0
-        left: 0
-        right: 0
-        bottom: 0
-        width: 100%
-        height: 100%
-        object-fit: cover
-      
+    
     &-info
       position: relative
-      padding: 0 94px
+      padding: 0 109px
       z-index: 1
 
     &-title
@@ -190,6 +184,12 @@
         background-repeat: no-repeat
         +prefix(transition,  $default-transition)
 
+      &.main-advantages-more-b
+        margin: 0 auto
+          top: 35px
+        padding: 0
+        max-width: 220px
+
       &.active
         &:after
           +prefix(transform, rotate(180deg))
@@ -253,9 +253,15 @@
         width: 50%
         min-height: 300px
 
+        .main-build-elem-wrap
+          padding: 35px 40px
+
       &.sm
         width: 33.33%
         min-height: 220px
+
+        .main-build-elem-wrap
+          padding: 35px 30px
 
       &:hover
         .main-build-elem-wrap
@@ -276,7 +282,6 @@
 
       &-wrap
         position: relative
-        padding: 45px
         width: 100%
         height: 100%
         background-color: $white
@@ -302,12 +307,19 @@
         right: -20px
         bottom: -20px
         +prefix(transition, $default-transition)
+        z-index: 0
 
       &-text
+        display: inline-block
+        position: relative
+        padding: 5px
         font-size: 28px 
         font-weight: 700
         line-height: 33px
         color: #000
+        background-color: rgba(255, 255, 255, .5)
+        border-radius: 10px
+        z-index: 1
       
       &-arrow
         margin:
@@ -333,6 +345,8 @@
         +justify-content(center)
 
         &-elem 
+          margin:
+            right: 15px
           padding: 13px 10px 14px 10px 
           width: 100%
           max-width: 190px
@@ -346,8 +360,9 @@
           cursor: pointer
           +prefix(transition, $default-transition)
 
-          &:nth-child(2)
-            margin: 0 15px
+          &:last-child
+            margin:
+              right: 0
 
           &:not(.active):hover
             color: rgba(0, 0, 0, .8)
@@ -407,6 +422,7 @@
     padding:
       top: 130px
       bottom: 124px
+    z-index: 0
 
     &:after
       content: ''
@@ -425,12 +441,15 @@
     &-text
       position: relative
       margin:
-        top: 45px
+        top: 40px
+      padding: 5px
       max-width: 535px
       font-size: 22px
       font-weight: 500
       line-height: 29px
       color: rgba(0, 0, 0, .6)
+      background-color: rgba(255, 255, 255, .5)
+      border-radius: 10px
       z-index: 1
     
     &-link
@@ -750,6 +769,10 @@
     background-size: auto
     background-position: center top -30px 
     background-repeat: no-repeat
+
+    &:before,
+    &:after
+      z-index: 0
 
     &:before
       content: ''

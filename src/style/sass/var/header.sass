@@ -1,6 +1,7 @@
 .header
   display: block
   width: 100%
+  background-color: $white
   
   &-wrap
     +flex
@@ -22,8 +23,11 @@
       bottom: 1px solid #F5F5F5
 
   &-logo
+    display: block
+    position: relative
     max-width: 198px
     +prefix(transition, $default-transition)
+    z-index: 9999
 
     &-img
       width: 100%
@@ -66,6 +70,7 @@
     opacity: $default-opacity
 
   &-call
+    display: block
     margin:
       top: 10px
     font-size: 14px
@@ -117,14 +122,14 @@
         +prefix(transition, $default-transition)
       
         &:nth-child(1)
-          top: 0
+          top: -1px
         
         &:nth-child(2)
           margin-top: -2px
           top: 50%
 
         &:nth-child(3)
-          bottom: 0
+          bottom: -1px
 
     &-dropdown
       display: none
@@ -291,3 +296,172 @@
   
     &:hover
       background-color: #cbffb3
+
+  &-menu-btn
+    display: none
+    position: relative
+    margin:
+      left: 15px
+    width: 30px
+    height: 11px
+    z-index: 9999
+
+    span
+      display: block
+      position: absolute
+      width: 100%
+      height: 5px
+      background-color: #682F13
+      border-radius: 10px
+      +prefix(transition, $default-transition)
+    
+      &:nth-child(1)
+        top: -4px
+      
+      &:nth-child(2)
+        margin-top: -3px
+        top: 50%
+
+      &:nth-child(3)
+        bottom: -4px
+
+    &.active
+      span
+        &:nth-child(1),
+        &:nth-child(3)
+          margin-top: -2px
+          top: 50%
+          bottom: auto
+
+        &:nth-child(1)
+          +prefix(transform, rotate(45deg))
+        
+        &:nth-child(2)
+          width: 0
+
+        &:nth-child(3)
+          +prefix(transform, rotate(-45deg))
+
+.mobile-menu
+  display: none
+  position: fixed
+  padding: 30px 20px
+    top: 90px 
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  width: 100% 
+  height: 100%
+  background-color: $white
+  overflow: auto
+  z-index: 999
+
+  &:before
+    content: ''
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 75px
+    background: rgb(2,0,36)
+    background: -moz-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(116,116,142,0) 0%, rgba(255,255,255,1) 41%)
+    background: -webkit-linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(116,116,142,0) 0%, rgba(255,255,255,1) 41%)
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(116,116,142,0) 0%, rgba(255,255,255,1) 41%)
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#020024",endColorstr="#ffffff",GradientType=1)
+    z-index: 999
+
+  &-list
+    list-style-type: none
+
+    li
+      margin:
+        bottom: 18px
+
+      &:last-child
+        margin:
+          bottom: 0
+      
+      &.active
+        .mobile-menu-list-elem
+          &.toggle
+
+            &:after
+              +prefix(transform, rotate(180deg))
+  
+    &-elem
+      position: relative
+      font-size: 16px
+      font-weight: 700
+      line-height: 19px
+      color: #682F13
+    
+      &.toggle
+        padding:
+          right: 20px
+
+        &:after
+          content: ''
+          display: block
+          position: absolute
+          margin:
+            top: -1px
+          top: 50%
+          right: 0
+          width: 10px
+          height: 5px
+          background-image: url(../img/icon/arrow-d.svg)
+          background-size: 100% auto
+          background-position: center center
+          background-repeat: no-repeat
+          +prefix(transition, $default-transition)
+      
+      &.action
+        padding:
+          right: 22px
+
+        &:after
+          content: ''
+          position: absolute
+          margin:
+            top: -8px
+          top: 50%
+          right: 0
+          width: 17px
+          height: 18px
+          background-image: url(../img/icon/action.svg)
+          background-size: 100% auto
+          background-position: center center
+          background-repeat: no-repeat 
+
+  &-dropdown
+    display: none
+    margin:
+      top: 12px
+    list-style-type: none
+
+    li
+      margin:
+        bottom: 21px
+
+      &:last-child
+        margin:
+          bottom: 0
+
+    &-elem
+      font-size: 14px
+      font-weight: 500
+      line-height: 16px
+      color: $font-color
+  
+  .header-calculator 
+    margin:
+      top: 20px
+    text-align: center
+  
+  .header-call 
+    margin: 0 auto
+      top: 20px
+    max-width: 180px
+    font-size: 14px
+    line-height: 16px

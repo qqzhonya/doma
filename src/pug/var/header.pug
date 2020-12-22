@@ -3,11 +3,11 @@ header.header
     .container.header-wrap
       a(href="").header-logo
         img(src="style/img/icon/logo.svg", alt="").header-logo-img
-      .header-elem
+      .header-elem.header-contact
         .header-info-item.address
           img(src="style/img/icon/pin.svg", alt="").header-info-item-icon
           | Санкт-Петербург, Выборгское ш. 212
-      .header-elem
+      .header-elem.header-contact
         .header-info-item 
           img(src="style/img/icon/clock.svg", alt="").header-info-item-icon
           | Пн – Вс
@@ -15,12 +15,16 @@ header.header
         a(href="mailto:info@zagorod-standart.ru").header-info-item
           img(src="style/img/icon/mail.svg", alt="").header-info-item-icon
           | info@zagorod-standart.ru
-      .header-elem
+      .header-elem.header-phone
         a(href="tel:+78127777777").header-info-item.phone
           img(src="style/img/icon/phone.svg", alt="").header-info-item-icon
           | +7 (812) 777-77-77
-        .header-call
+        a(href="").header-call
           | Заказать обратный звонок 
+      .header-menu-btn
+        span
+        span
+        span
   .header-b
     .container.header-wrap
       .header-project
@@ -65,3 +69,53 @@ header.header
         a(href="").header-nav-item
           | Контакты
       a(href="").header-calculator Рассчитать проект 
+
+.mobile-menu
+  ul.mobile-menu-list
+    li 
+      span.mobile-menu-list-elem.toggle Проекты домов
+      ul.mobile-menu-dropdown
+        li
+          a(href="").mobile-menu-dropdown-elem Дома из бруса
+        li
+          a(href="").mobile-menu-dropdown-elem Каркасные дома
+        li
+          a(href="").mobile-menu-dropdown-elem Бани из бруса
+        li
+          a(href="").mobile-menu-dropdown-elem Каркасные бани
+        li
+          a(href="").mobile-menu-dropdown-elem Деревянные дома  
+    li
+      span.mobile-menu-list-elem.toggle Клиентам
+      ul.mobile-menu-dropdown
+        li
+          a(href="").mobile-menu-dropdown-elem Дома из бруса
+        li
+          a(href="").mobile-menu-dropdown-elem Каркасные дома
+        li
+          a(href="").mobile-menu-dropdown-elem Бани из бруса
+        li
+          a(href="").mobile-menu-dropdown-elem Каркасные бани
+        li
+          a(href="").mobile-menu-dropdown-elem Деревянные дома 
+    li
+      span.mobile-menu-list-elem.toggle Услуги
+      ul.mobile-menu-dropdown
+        li
+          a(href="").mobile-menu-dropdown-elem Дома из бруса
+        li
+          a(href="").mobile-menu-dropdown-elem Каркасные дома
+        li
+          a(href="").mobile-menu-dropdown-elem Бани из бруса
+        li
+          a(href="").mobile-menu-dropdown-elem Каркасные бани
+        li
+          a(href="").mobile-menu-dropdown-elem Деревянные дома 
+    li
+      a(href="").mobile-menu-list-elem Построено
+    li
+      a(href="").mobile-menu-list-elem.action Акции
+    li
+      a(href="").mobile-menu-list-elem Контакты
+  a(href="").header-calculator Рассчитать проект 
+  a(href="").header-call Заказать обратный звонок
