@@ -90,7 +90,23 @@ $(function() {
     dots: true,
     arrow: true,
     infinite: true,
-    speed: 2000
+    speed: 2000,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 716,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ],
   });
 
   // Action slider - end 

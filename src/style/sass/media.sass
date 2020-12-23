@@ -96,6 +96,20 @@
       line-height: 28px
 
   .main
+    &-cone
+      &-1,
+      &-2,
+      &-3,
+      &-4
+        display: none 
+
+    &-leaf
+      &-1,
+      &-2,
+      &-3,
+      &-4
+        display: none 
+
     &-head
       &-slider-info
         padding:
@@ -133,6 +147,48 @@
         padding:
           left: 0
     
+    &-action
+      &-item
+        padding:
+          top: 40px
+          bottom: 44px
+        min-height: 233px
+
+      &-img
+        &.bar
+          content: url('../img/action-img/action-img-1-mob.png')
+        
+        &.car
+          content: url('../img/action-img/action-img-2-mob.png')
+        
+        &.base
+          content: url('../img/action-img/action-img-3-mob.jpg')
+          width: 100%
+          max-height: 172px
+          object-fit: cover
+        
+        &.window
+          content: url('../img/action-img/action-img-4-mob.png')
+      
+      &-title
+        padding: 10px 15px
+        font-size: 20px
+        line-height: 24px
+
+        &-text
+          max-width: 200px
+
+        &-accent
+          font-size: 16px
+          line-height: 19px
+      
+      &-desc
+        margin:
+          top: 20px
+        padding: 0 15px
+        font-size: 13px
+        line-height: 15px
+
     &-request
       &:after
         display: none
@@ -157,6 +213,14 @@
       width: 100%
 
   .warranty
+    &-cone
+      &-1
+        display: none
+    
+    &-leaf
+      &-1
+        display: none
+
     &-cover
       &-wrap
         +justify-content(center)
@@ -209,6 +273,15 @@
   .form
     &-file
       display: none
+
+  .contact
+    &-cone
+      &-1
+        display: none
+    
+    &-leaf
+      &-1
+        display: none
 
 @media screen and (max-width: 920px)
   .main
@@ -586,6 +659,21 @@
     &-question
       &-bg
         +prefix(transform, translateX(-15%))
+
+    &-product
+      &-action-banner
+        padding: 10px 13px
+          bottom: 150px
+
+        &-img
+          top: auto
+          right: -20px
+          bottom: -10px
+          
+        
+        &-text
+          font-size: 20px
+          line-height: 24px
 
   .product
     &-page-head
@@ -1026,13 +1114,21 @@
   
   .slick-nav-bottom
     .slick-arrow
-      margin:
+      margin: 0 10px
         bottom: 10px
+
       &.slick-next
         order: 3
     
     .slick-dots
+      width: 100%
+      +justify-content(center)
       order: 4
+  
+  .product-slider
+    &.slick-nav-bottom
+      .slick-arrow
+        margin: 0 10px
   
   .main
     &-info
@@ -1042,6 +1138,15 @@
             margin: 0
             width: 100%
             +justify-content(center)
+    
+    &-popular
+      &-tab
+        &-nav
+          &-elem
+            margin: 0
+              bottom: 10px
+            width: 100%
+            max-width: 100%
 
   .warranty
     &-header

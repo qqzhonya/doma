@@ -465,10 +465,29 @@ a
 		&:not(.slick-disabled):hover
 			background-color: #631E01
 
-	.slick-dots		
-
 	.product-item
 		padding: 0 10px
+
+	&.slick-nav-bottom
+		.slick-arrow
+			&.slick-prev
+				left: 10px
+				background-image: url(../img/icon/arrow-ps-l-w.svg)
+				order: 2
+
+				&:not(.slick-disabled):hover
+					background-image: url(../img/icon/arrow-s-l.svg)
+			
+			&.slick-next
+				right: 10px
+				background-image: url(../img/icon/arrow-ps-r-w.svg)
+				order: 4
+
+				&:not(.slick-disabled):hover
+					background-image: url(../img/icon/arrow-s-r.svg)
+
+		.slick-dots
+			width: auto
 
 .custom-link
 	font-size: 14px

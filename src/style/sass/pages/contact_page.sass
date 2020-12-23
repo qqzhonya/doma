@@ -1,4 +1,19 @@
 .contact
+
+  &-cone
+    &-1
+      position: absolute
+      left: -120px
+      bottom: 50px
+  
+  &-leaf
+    &-1
+      position: absolute
+      top: 50px
+      right: -20px
+      max-width: 197px
+      +prefix(transform, rotate(-25deg))
+
   &-map-wrap
     +flex
     position: relative
@@ -152,6 +167,7 @@
               background-color: #8E24AA
 
   &-feedback
+    position: relative
     padding:
       top: 110px
       bottom: 125px
@@ -175,8 +191,6 @@
       width: 100%
       height: 100%
       object-fit: cover
-
-
 
 .popover
   &-close
