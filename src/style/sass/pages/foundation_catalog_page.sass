@@ -1,0 +1,141 @@
+.foundation-catalog
+  &-head
+    max-width: 800px
+  
+  &-wrap
+    margin:
+      top: 40px
+
+  &-elem
+    margin:
+      bottom: 30px
+    padding:
+      left: 40px
+    
+    &:last-child
+      margin:
+        bottom: 0
+
+    &-wrap
+      +flex
+      position: relative
+      padding: 30px 40px
+        left: 270px
+      min-height: 331px
+      border: 1px solid #DFDFDF
+        radius: 10px
+      +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+      +align-items(center)
+
+      &:before
+        content: ''
+        display: none
+        position: absolute
+        top: 20px
+        left: 20px
+        right: 20px
+        bottom: 20px
+        border: 1px solid rgba(137, 224, 96, 0.9)
+          radius: 10px
+        z-index: 1
+
+    &-img
+      position: absolute
+      top: 0
+      left: -40px
+      z-index: 0
+
+    &-info
+      position: relative
+      z-index: 2
+
+    &-title
+      font-size: 28px
+      font-weight: 700
+      line-height: 33px
+      color: #000
+    
+    &-desc
+      font-size: 16px
+      font-weight: 400
+      font-style:  italic
+      line-height: 19px
+      color: #000
+    
+    &-text
+      margin:
+        top: 10px
+      font-size: 13px
+      font-weight: 400
+      line-height: 19px
+      color: $font-color
+    
+    &-show-all
+      display: inline-block
+      position: relative
+      padding:
+        right: 20px 
+      font-size: 12px
+      font-weight: 500
+      line-height: 14px
+      color: #631E01
+
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        margin:
+          top: -2px
+        top: 50%
+        right: 0
+        width: 10px
+        height: 5px
+        background-image: url(../img/icon/arrow-d.svg)
+        background-size: 100% auto
+        background-position: center center
+        background-repeat: no-repeat
+        +prefix(transition, $default-transition)
+      
+      &.active
+        &:after
+          +prefix(transform, rotate(180deg))
+
+    &-price
+      position: relative
+      padding:
+        left: 5px
+      text-align: center
+      z-index: 2
+
+      &-title
+        font-size: 14px
+        font-weight: 400
+        line-height: 16px
+        color: rgba(0, 0, 0, .5)
+
+      &-val
+        margin:
+          top: 10px
+        font-size: 18px
+        font-weight: 700
+        line-height: 21px
+        color: #000
+      
+    &-btn
+      display: inline-block
+      margin:
+        top: 30px
+      padding: 13px 45px 14px 45px
+      font-size: 16px
+      font-weight: 700
+      line-height: 19px
+      color: #fff
+      background-color: $green-color
+      border:
+        radius: 10px
+      +prefix(transition, $default-transition)
+      cursor: pointer
+
+      &:hover
+        opacity: $default-opacity
+

@@ -362,4 +362,20 @@ $(function() {
   });
 
   // Mobile open filter - end
+
+  // Foundation catalog show\hide description
+
+  $('.foundation-catalog-elem-show-all').click(function() {
+    $(this).toggleClass('active');
+
+    if($(this).hasClass('active')) {
+      $(this).text('Свернуть описание');
+      $(this).parent().find('.foundation-catalog-elem-text').addClass('active');
+    } else {
+      $(this).text('Развернуть описание');
+      $(this).parent().find('.foundation-catalog-elem-text').removeClass('active')
+    }
+  });
+
+  // Foundation catalog show\hide description - end 
 });

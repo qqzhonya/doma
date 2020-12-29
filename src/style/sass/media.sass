@@ -283,6 +283,33 @@
       &-1
         display: none
 
+  .foundation-catalog
+    &-elem
+      &-wrap
+        +flex-wrap(wrap)
+      
+      &-price
+        margin:
+          top: 35px
+        padding: 0
+        width: 100%
+        text-align: left
+
+        &-wrap
+          +flex
+          +align-items(center)
+        
+        &-title
+          margin:
+            right: 20px
+
+        &-val
+          margin: 0
+
+  .standard
+    &-elem
+      width: 50%
+
 @media screen and (max-width: 920px)
   .main
     &-stage
@@ -341,6 +368,13 @@
           margin: 0 auto
 
     &-page-head
+      text-align: center
+    
+    &-big-head
+      font-size: 28px
+      font-weight: 700
+      line-height: 33px
+      color: $font-color
       text-align: center
 
   .slick-arrow
@@ -967,6 +1001,105 @@
     &-feedback
       background-size: cover
       background-position: center top 20px
+
+  .foundation-catalog
+    &-elem
+      margin:
+        bottom: 15px
+      padding: 0
+      
+      &.piles
+        .foundation-catalog-elem-img
+          content: url('../img/foundation-img/foundation-catalog-img-mob-1.png')
+
+      &.piles-rc
+        .foundation-catalog-elem-img
+          content: url('../img/foundation-img/foundation-catalog-img-mob-2.png')
+
+      &.column
+        .foundation-catalog-elem-img
+          content: url('../img/foundation-img/foundation-catalog-img-mob-3.png')
+
+      &.strip
+        .foundation-catalog-elem-img
+          content: url('../img/foundation-img/foundation-catalog-img-mob-4.png')
+
+      &.plate
+        .foundation-catalog-elem-img
+          content: url('../img/foundation-img/foundation-catalog-img-mob-5.png')
+
+      &-img
+        position: relative
+        margin: 0 auto
+        top: auto
+        left: auto
+        width: 100%
+        max-width: 350px
+
+      &-wrap
+        padding: 15px
+        text-align: center
+      
+      &-title
+        font-size: 20px
+        line-height: 24px
+      
+      &-desc
+        margin:
+          top: 7px
+        font-size: 14px
+        line-height: 16px
+      
+      &-text
+        display: -webkit-box
+        font-size: 12px
+        line-height: 18px
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        text-overflow: ellipsis
+        overflow: hidden
+
+        &.active
+          -webkit-line-clamp: unset
+
+      &-price
+        text-align: center
+      
+        &-wrap
+          +justify-content(center)
+        
+      &-btn
+        width: 100%
+
+  .standard
+    &-desc
+      margin:
+        top: 15px
+      font-size: 16px
+      line-height: 22px
+
+    &-wrap
+      margin:
+        top: 40px
+
+    &-elem
+      width: 100%
+
+      &-title
+        font-size: 18px
+        line-height: 25px
+      
+      &-desc
+        margin:
+          top: 15px
+        font-size: 14px
+        line-height: 18px
+      
+      &-link
+        margin:
+          top: 10px
+        font-size: 14px
+        line-height: 21px
 
 @media screen and (max-width: 590px)
   .product
