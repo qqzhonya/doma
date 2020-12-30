@@ -1,0 +1,984 @@
+.foundation
+  &-cone
+    &-1
+      position: absolute
+      top: 1200px
+      left: -100px
+      z-index: 0
+  
+    &-2
+      position: absolute
+      top: 2850px
+      right: -50px
+      z-index: 0
+  
+  &-leaf
+    &-1
+      position: absolute
+      top: -170px
+      right: -125px
+      z-index: 0
+
+    &-2
+      position: absolute
+      top: 2820px
+      right: 120px
+      max-width: 197px
+      z-index: 0
+    
+    &-3
+      position: absolute
+      left: 0
+      bottom: 1000px
+
+  &-info
+    +flex
+    margin:
+      top: 35px
+  
+    &-img-wrap
+      width: 40.09%
+    
+    &-img
+      width: 100%
+
+    &-elem
+      position: relative
+      padding: 
+        left: 55px
+      width: 59.91%
+      z-index: 1
+      
+      i
+        font-size: 13px
+        font-weight: 400
+        line-height: 15px
+
+      p 
+        margin:
+          top: 15px
+        font-size: 14px
+        font-weight: 400
+        line-height: 21px
+
+      b
+        font-weight: 700
+    
+    &-price
+      +flex
+      margin:
+        top: 30px
+      padding: 19px 30px
+      background-color: $bg-light-green
+      border:
+        bottom-left-radius: 10px
+        bottom-right-radius: 10px
+      
+      &-elem
+        width: 50%
+
+        &:first-child
+          padding:
+            right: 10px
+          border:
+            right: 1px solid $green-color
+        
+        &:last-child
+          padding:
+            left: 10px
+
+      &-title
+        font-size: 16px
+        font-weight: 400
+        line-height: 19px
+        color: rgba(0, 0, 0, .7)
+
+      &-val
+        font-size: 25px
+        font-weight: 400
+        line-height: 30px
+
+        &-num
+          font-size: 28px
+          font-weight: 700
+          line-height: 33px 
+      
+      &-link
+        display: block
+        margin: 0 0 0 auto
+        padding: 13px 18px 14px 18px
+        width: 100%
+        max-width: 227px
+        font-size: 16px
+        font-weight: 700
+        line-height: 19px
+        color: $green-color
+        text-align: center
+        border: 1px solid $green-color
+          radius: 10px
+        +prefix(transition, $default-transition)
+        
+        &:hover
+          color: $white
+          background-color: $green-color
+
+  &-about
+    position: relative
+    margin:
+      top: 50px
+    padding: 50px 0
+    background-color: #F8F8F8
+
+    &-wrap
+      +flex
+      margin: 0 -30px
+      +justify-content(center)
+
+    &-elem
+      padding: 0 30px
+      width: 25%
+
+      &-wrap
+        position: relative
+        padding:
+          top: 40px
+        min-height: 190px
+        text-align: center
+
+      &-img
+        position: absolute
+        top: 50%
+        left: 50%
+        +prefix(transform, translate(-50%, -50%))
+
+      &-title
+        font-size: 20px
+        font-weight: 700
+        line-height: 24px
+        color: #000
+      
+      &-desc
+        margin:
+          top: 17px
+        font-size: 16px
+        font-weight: 400
+        line-height: 20px
+        color: #000
+
+  &-diff 
+    margin:
+      top: 80px
+    
+    &-slider
+      margin:
+        top: 55px
+
+      .slick-list
+        padding:
+          bottom: 40px
+
+      .slick-arrow
+        position: absolute
+        margin:
+          top: -20px
+        top: 50%
+        width: 40px
+        height: 40px
+        background-color: transparent
+        background-size: 10px 20px
+        
+        &.slick-prev
+          left: 0
+          background-image: url(../img/icon/arrow-ps-l-w.svg)
+          background-position: left 13px center
+
+          &:not(.slick-disabled):hover
+            background-image: url(../img/icon/arrow-s-l.svg)
+        
+        &.slick-next
+          right: 0
+          background-image: url(../img/icon/arrow-ps-r-w.svg)
+          background-position: right 13px center
+
+          &:not(.slick-disabled):hover
+            background-image: url(../img/icon/arrow-s-r.svg)
+        
+        &:not(.slick-disabled):hover
+          background-color: #682F13
+
+      .slick-dots
+        button
+          margin: 0 2px
+          max-width: 30px
+
+    &-elem
+      padding: 0 45px
+      
+      &-wrap
+        position: relative
+        padding: 25px
+          top: 20px
+        background-color: $white
+        border: 1px solid #DFDFDF
+          radius: 10px
+        +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+        overflow: hidden
+
+      &-num 
+        position: absolute
+        bottom: 0
+        right: 0
+        font-size: 589px
+        font-weight: 900
+        line-height: 79.99%
+        color: #f1f1f1
+        z-index: 0
+
+    &-title
+      margin:
+        bottom: 13px
+      font-size: 28px
+      font-weight: 700
+      line-height: 42px
+      color: $font-color
+      text-align: center
+    
+    &-item
+      +flex 
+      position: relative
+      margin:
+        bottom: 20px
+
+      &.good
+        .foundation-diff-item-img
+          border-color: #00950F
+      
+      &.bad 
+        .foundation-diff-item-img
+          border-color: #F86464
+
+      &:last-child
+        margin:
+          bottom: 0
+
+      &-img-wrap
+        position: relative
+        padding:
+          right: 43px
+
+      &-img
+        min-width: 250px
+        border: 1px solid grey
+          radius: 10px
+      
+      &-val
+        position: absolute
+        top: 50%
+        right: 0
+        width: 33px
+        +prefix(transform, translateY(-50%))
+
+      &-text
+        padding:
+          left: 10px
+        font-size: 16px
+        font-weight: 400
+        line-height: 24px
+        color: $font-color
+
+  &-advantages
+    margin:
+      top: 75px
+
+    &-wrap
+      +flex
+      margin: 0 -15px
+        top: 55px
+
+    &-elem
+      position: relative
+      margin: 0 15px
+      padding: 35px 15px
+      width: 50%
+      border: 1px solid #DFDFDF
+        radius: 10px 
+      +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+      z-index: 1
+
+      &.good
+        background-color: #F4FFEF
+
+        .foundation-advantages-item
+          &:after
+            content: '+'
+            color: #00950F
+            background-color: #DAFFC9
+
+      &.bad
+        background-color: #FFF4F0
+
+        .foundation-advantages-item
+          &:after
+            content: '-'
+            color: #FF0000
+            line-height: 21px
+            background-color: rgba(255, 0, 0, 0.1)
+
+    &-item
+      position: relative
+      margin:
+        bottom: 30px
+      padding:
+        left: 50px
+      font-size: 16px
+      font-weight: 400
+      line-height: 24px
+      color: $font-color
+
+      &:last-child
+        margin:
+          bottom: 0
+
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        font-size: 26px
+        font-weight: 300
+        line-height: 24px
+        text-align: center
+        width: 28px
+        height: 28px
+        background-color: grey
+        border-radius: 100px
+
+  &-type
+    margin:
+      top: 75px
+
+    &-desc
+      margin:
+        top: 15px
+      font-size: 16px
+      font-weight: 400
+      line-height: 24px
+      color: rgba(0, 0, 0, .7)
+
+    &-wrap
+      +flex
+      position: relative
+      margin: 0 -15px
+        top: 25px
+      +flex-wrap(wrap)
+      z-index: 1
+    
+    &-elem
+      +flex
+      padding: 15px
+      width: 50%
+      +align-items(flex-start)
+
+      &-img
+        max-width: 95px
+
+      &-info
+        padding:
+          left: 15px
+
+      &-title
+        font-size: 20px
+        font-weight: 700
+        line-height: 30px
+        color: $font-color
+      
+      &-desc
+        margin:
+          top: 10px
+        font-size: 16px
+        font-weight: 400
+        line-height: 24px
+        color: $font-color
+      
+      &-link
+        display: block
+        margin:
+          top: 15px
+        padding: 13px 10px 14px 10px
+        width: 100%
+        max-width: 175px
+        font-size: 16px
+        font-weight: 700
+        line-height: 19px
+        color: $green-color
+        text-align: center
+        border: 1px solid $green-color
+          radius: 10px
+        +prefix(transition, $default-transition)
+
+        &:hover
+          background-color: $bg-light-green
+  
+  &-stage
+    margin: 
+      top: 65px
+    padding: 70px 0
+    background-color: #F8F8F8
+
+    &-wrap
+      +flex
+      margin: 0 -15px
+        top: 10px
+
+    &-elem
+      position: relative
+      padding: 0 15px
+      width: 33.33%
+      text-align: center
+
+      &-delimer
+        position: absolute
+        right: -246px
+        top: 50%
+        width: 200%
+        max-width: 245px
+        height: 1px
+        border-top: 1px dashed #682F13
+
+      &-num
+        display: inline-block
+        position: relative
+        width: 100%
+        max-width: 133px
+        font-size: 92px
+        font-weight: 700
+        line-height: 139px
+        color: #682F13
+        
+        &:before,
+        &:after
+          content: ''
+          display: block
+          position: absolute
+          margin:
+            top: -6px
+          top: 50% 
+          width: 12px
+          height: 12px
+          background-color: #682F13
+          border-radius: 50px
+
+        &:before
+          left: 0
+
+        &:after
+          right: 0 
+      
+      &-title
+        font-size: 20px
+        font-weight: 700
+        line-height: 30px
+        color: $font-color
+      
+      &-desc
+        margin:
+          top: 13px
+        font-size: 14px
+        font-weight: 400
+        line-height: 21px
+        color: $font-color
+
+  &-work
+    margin:
+      top: 70px
+
+    &-slider
+      margin:
+        top: 60px
+      padding: 0 53px
+
+      .slick-arrow
+        position: absolute
+        margin:
+          top: -20px
+        top: 50%
+        width: 40px
+        height: 40px
+        background-color: transparent
+        background-size: 10px 20px
+
+        &.slick-prev
+          left: 0
+          background-image: url(../img/icon/arrow-ps-l-w.svg)
+          background-position: left 13px center 
+
+          &:not(.slick-disabled):hover
+            background-image: url(../img/icon/arrow-s-l.svg)
+
+        &.slick-next
+          right: 0
+          background-image: url(../img/icon/arrow-ps-r-w.svg)
+          background-position: right 13px center 
+
+          &:not(.slick-disabled):hover
+            background-image: url(../img/icon/arrow-s-r.svg)
+        
+        &:not(.slick-disabled):hover
+          background-color: #682F13
+
+    &-elem
+      margin: 0 8px
+      
+    &-img-wrap
+      position: relative
+      padding:
+        bottom: 90%
+      width: 100%
+      border-radius: 10px
+      overflow: hidden
+
+    &-img
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0 
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &-other
+    margin:
+      top: 75px  
+    
+    &-slider
+      margin: 0 -15px
+        top: 55px
+
+      .slick-list
+        padding:
+          bottom: 10px
+      
+      .slick-arrow
+        position: absolute
+        margin:
+          top: -16px
+        top: 50%
+        width: 32px
+        height: 32px
+        background-color: transparent
+        background-size: 7px 16px
+        background-repeat: no-repeat
+
+        &.slick-prev
+          left: 15px
+          background-image: url(../img/icon/arrow-ps-l-w.svg)
+          background-position: left 12px center
+
+          &:not(.slick-disabled):hover
+            background-image: url(../img/icon/arrow-s-l.svg)
+        
+        &.slick-next
+          right: 15px
+          background-image: url(../img/icon/arrow-ps-r-w.svg)
+          background-position: right 12px center
+
+          &:not(.slick-disabled):hover
+            background-image: url(../img/icon/arrow-s-r.svg)
+        
+        &:not(.slick-disabled):hover
+          background-color: #631E01
+  
+    &-elem
+      position: relative
+      margin: 0 15px
+      padding: 15px
+      text-align: center
+      border: 1px solid #DFDFDF
+        radius: 10px
+      +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+      overflow: hidden
+
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        top: -10px 
+        left: -10px
+        right: -10px
+        bottom: -10px
+        border: 1px solid #00950F
+          radius: 10px
+        +prefix(transition,  $default-transition)
+        z-index: 0
+    
+      &:hover
+        &:after
+          top: 10px
+          left: 10px
+          right: 10px
+          bottom: 10px
+    
+    &-img
+      position: relative
+      width: 100%
+      z-index: 1
+
+    &-title
+      position: relative
+      margin:
+        top: 5px
+      font-size: 20px
+      font-weight: 700
+      line-height: 30px
+      color: $font-color
+      z-index: 1
+    
+    &-price
+      position: relative
+      margin:
+        top: 7px
+      z-index: 1
+
+      &-title
+        font-weight: 14px
+        font-weight: 400
+        line-height: 16pxx
+        color: rgba(0, 0, 0, .5)
+      
+      &-val
+        margin:
+          top: 5px
+        font-size: 18px
+        font-weight: 700
+        line-height: 21px
+        color: #000
+      
+    &-link
+      position: relative
+      display: block
+      margin: 0 auto
+        top: 15px
+      padding: 13px 10px
+      width: 100%
+      max-width: 175px
+      font-size: 16px
+      font-weight: 700
+      line-height: 19px
+      color: $white
+      text-align: center
+      background-color: $green-color
+      border-radius: 10px
+      +prefix(transition, $default-transition)
+      z-index: 1
+
+      &:hover
+        opacity: $default-opacity
+
+  &-difference
+    margin:
+      top: 70px
+
+    .container-head
+      &-text
+        max-width: 495px
+
+    &-desc
+      max-width: 670px
+    
+    &-table
+      margin:
+        top: 30px
+      padding: 30px
+      background-color: $white
+      border: 1px solid #DFDFDF
+        radius: 10px
+      +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+
+      &-row
+        +flex
+        border:
+          bottom: 2px solid #EFEFEF
+
+        &:last-child
+          border:
+            bottom: 0
+          
+          .foundation-difference-table-elem
+            padding:
+              bottom: 0
+
+        &.foundation-difference-table-head
+          .foundation-difference-table-elem
+            font-weight: 700
+            color: rgba(0, 0, 0, .9)
+      
+      &-elem
+        padding: 9px 15px
+        font-size: 14px
+        font-weight: 400
+        line-height: 18px
+        color: rgba(0, 0, 0, .7)
+        border:
+          right: 2px solid #EFEFEF
+      
+        &.green
+          font-weight: 700
+          color: $green-color
+        
+        &.red
+          color: #F86464
+
+        &:nth-child(1)
+          width: 12.57%
+          overflow-wrap: break-word
+        
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4)
+          width: 22.48%
+        
+        &:nth-child(5)
+          padding:
+            right: 0
+          width: 19.62%
+          border:
+            right: 0
+        
+        b
+          font-weight: 700
+
+  &-notion
+    margin:
+      top: 70px
+
+    .container-head
+      &-text
+        max-width: 710px
+      
+    &-elem
+      +flex
+      position: relative
+      margin:
+        top: 55px
+      background-color: $bg-light-green
+      border-radius: 10px
+      overflow: hidden
+
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        top: 25px
+        left: 0
+        width: 164px
+        height: 326px
+        background-image: url(../img/icon/exc-mark.svg)
+        background-size: 100% 100%
+        background-repeat: no-repeat
+    
+    &-text
+      position: relative
+      padding: 25px 45px
+      width: 58.2%
+      font-size: 16px
+      font-weight: 400
+      line-height: 24px
+      color: $font-color
+
+      p
+        margin:
+          bottom: 30px
+        
+        &:last-child
+          margin: 
+            bottom: 0
+    
+    &-img-wrap
+      position: relative
+      padding:
+        bottom: 33.2%
+      width: 41.8%
+    
+    &-img
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+  &-tech
+    margin:
+      top: 70px
+
+    .container-head
+      &-text
+        max-width: 600px
+    
+    &-wrap
+      +flex
+      margin: 0 -20px
+        top: 45px
+    
+    &-elem
+      padding: 0 20px
+      width: 50% 
+    
+      &-wrap
+        position: relative
+        width: 100%
+        height: 100%
+        border: 1px solid #DFDFDF
+          radius: 10px
+        +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+        overflow: hidden
+
+        &:before
+          content: ''
+          display: block
+          position: absolute
+          top: 27px
+          left: 27px
+          right: 27px
+          bottom: 27px
+          border: 1px solid rgba(137, 224, 96, 0.9)
+            radius: 10px
+          z-index: 2
+      
+      &-img-wrap
+        position: relative
+        padding:
+          bottom: 74%
+        width: 100%
+      
+      &-img
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+      &-info
+        padding: 26px 57px 45px 57px
+      
+      &-title
+        font-size: 20px
+        font-weight: 700
+        line-height: 30px
+        color: $font-color
+      
+      &-desc
+        margin:
+          top: 15px
+        font-size: 16px
+        font-weight: 400
+        line-height: 24px
+        color: $font-color
+
+  &-build
+    margin:
+      top: 70px
+    
+    &-wrap
+      position: relative
+      margin: 
+        top: 30px
+
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 22px
+        width: 1px
+        height: 90%
+        border: 
+          left: 1px dashed #BFBFBF
+
+    &-elem
+      +flex
+      position: relative
+      padding:
+        left: 95px
+      margin:
+        bottom: 50px
+
+      &-stage
+        position: absolute
+        padding: 0 10px
+        top: -25px
+        left: -210px
+        min-width: 250px
+        min-height: 300px
+        font-size: 50px
+        font-weight: 700
+        line-height: 75px
+        color: rgba(200, 200, 200, .8)
+        background-color: $white
+        +prefix(transform, rotate(90deg))
+      
+      &-info
+        padding:
+          right: 30px
+
+      &-title
+        font-size: 20px
+        font-weight: 700
+        line-height: 30px
+        color: $font-color
+      
+      &-desc
+        font-size: 16px
+        font-weight: 400
+        line-height: 24px
+        color: $font-color
+    
+      &-img
+        width: 100%
+        min-width: 513px
+
+    &-slider
+      display: none
+      margin:
+        top: 50px
+      padding:
+        bottom: 50px
+
+      .slick-list
+        padding:
+          bottom:  30px
+      
+      &-elem
+        padding: 0 10px
+
+      &-title
+        font-size: 28px
+        font-weight: 700
+        line-height: 42px
+        color: rgba(200, 200, 200, .8)
+        text-align: center
+      
+      &-img
+        margin:
+          top: 10px
+        width: 100%
+      
+      &-desc
+        margin:
+          top: 15px
+        font-size: 14px
+        font-weight: 400
+        line-height: 21px
+        color: $font-color 
+
+  &-question
+    margin:
+      top: 65px
+  

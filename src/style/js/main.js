@@ -378,4 +378,138 @@ $(function() {
   });
 
   // Foundation catalog show\hide description - end 
+
+  // Foundation diff slider 
+
+  $('.foundation-diff-slider').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrow: true,
+    dots: true,
+    infinite: false,
+  });
+
+  // Foundation diff slider - end
+
+  // Foundation work slider 
+
+  $('.foundation-work-slider').slick({
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    arrow: true,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 761,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 540,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ],
+  });
+
+  // Foundation work slider - end
+
+  // Foundation other slider 
+
+  $('.foundation-other-slider').slick({
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    arrow: true,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+        }
+      },
+      {
+        breakpoint: 761,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 520,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ],
+  })
+
+  // Foundation other slider - end
+
+  // Foundation build mob slider
+
+  $('.foundation-build-slider').slick({
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrow: true,
+    dots: true,
+    infinite: false,
+    responsive: [
+      {
+        breakpoint: 590,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        }
+      },
+    ],
+  })
+
+  $(window).resize(function() {
+    if($(this).width() <= 761) {
+      $('.foundation-build-slider').slick('refresh');
+    }
+  })
+
+  // Foundation build mob slider - end
+
+  // Open modal
+
+  $('.modal-btn').click(function(e) {
+    e.stopPropagation();
+
+    var btnVal = $(this).data("modal-btn");
+    var showModal = $('.modal').filter('[data-modal = "' + btnVal +'"]');
+      
+    $('body').addClass('modal-active');
+    $('.main-wrap').addClass('modal-active');
+
+    showModal.fadeIn();
+
+    console.log(btnVal);
+  });
+
+  $('')
+
+  $('.modal-close').click(function() {
+		$('.modal').fadeOut();
+    $('html, body').removeClass('modal-active');
+  });
+
+  $(window).click(function() {
+    $('.modal').fadeOut();
+    $('html, body').removeClass('modal-active');
+  })
+
+  $('.modal-body').click(function(e) {
+    e.stopPropagation();
+  });
+
+  // Open modal - end
 });

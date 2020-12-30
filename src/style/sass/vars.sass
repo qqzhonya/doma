@@ -24,7 +24,6 @@ html, body
 	font-style: normal
 	color: #000
 	background-color: $white
-	overflow-x: hidden
 
 html
 	height: 100%
@@ -34,9 +33,10 @@ body
 	position: relative
 	height: auto
 	min-height: 100%
+	overflow-x: hidden
 
 	&.modal-active
-		overflow: hidden
+		overflow-y: hidden
 
 button,
 input,
@@ -60,8 +60,10 @@ a
 	min-height: 100%
 	+flex-direction(column)
 	+align-items(center)
+	overflow: hidden
 
 .wrap
+	position: relative
 	width: 100%
 	min-height: 100%
 	-webkit-box-flex: 1
@@ -128,6 +130,14 @@ a
 		line-height: 60px
 		color: #000
 		text-transform: uppercase
+
+	&-desc
+		margin:
+			top: 15px
+		font-size: 16px
+		font-weight: 400
+		line-height: 24px
+		color: rgba(0, 0, 0, .7)
 
 .breadcrumbs
 	+flex
@@ -731,6 +741,24 @@ a
 		&:hover
 			color: #631E01
 			background-color: $white
+	
+	&-note
+		position: relative
+		margin:
+			top: 20px
+		padding:
+			left: 10px
+		font-size: 12px
+		font-weight: 500
+		line-height: 14px
+		color: rgba(0, 0, 0, .5)
+		text-align: left
+
+		&:before
+			content: '*'
+			position: absolute
+			top: 0
+			left: 0
 
 .pagination
 	+flex

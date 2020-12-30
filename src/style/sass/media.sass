@@ -43,6 +43,12 @@
           &:nth-child(6)
             right: 0
 
+  .foundation
+    &-stage
+      &-elem
+        &-delimer
+          display: none
+
   .footer
     &-nav
       +flex-wrap(wrap)
@@ -306,6 +312,78 @@
         &-val
           margin: 0
 
+  .foundation
+    &-cone
+      &-1,
+      &-2
+        display: none
+    
+    &-leaf
+      &-1,
+      &-2,
+      &-3
+        display: none
+
+    &-info
+      +flex-wrap(wrap)
+
+      &-img-wrap
+        margin: 0 auto
+        width: 100%
+        max-width: 400px
+        border: 1px solid #DFDFDF
+          radius: 10px
+        overflow: hidden
+      
+      &-elem
+        margin: 0 auto
+          top: 20px
+        padding: 0
+        width: 100%
+        max-width: 550px
+
+    &-about
+      padding:
+        bottom: 10px
+
+      &-wrap
+        +flex-wrap(wrap)
+      
+      &-elem
+        margin:
+          bottom: 40px
+        width: 50%
+    
+    &-diff
+      &-elem
+
+        &-num
+          top: 50%
+          bottom: auto
+          +prefix(transform, translateY(-50%))
+
+      &-item
+        margin:
+          bottom: 40px
+        +flex-wrap(wrap)
+
+        &-img-wrap
+          margin: 0 auto
+        
+        &-text
+          margin:
+            top: 30px
+
+    &-difference
+      &-table
+        padding: 15px
+    
+    &-build
+      &-elem
+        min-height: 250px
+        &-img
+          min-width: 300px
+
   .standard
     &-elem
       width: 50%
@@ -351,6 +429,11 @@
       padding: 0
 
 @media screen and (max-width: 761px)
+  .modal
+    .form
+      padding:
+        top: 50px
+
   .container
     &-head
       +flex
@@ -376,6 +459,10 @@
       line-height: 33px
       color: $font-color
       text-align: center
+    
+    &-desc
+      font-size: 14px
+      line-height: 21px
 
   .slick-arrow
     width: 32px
@@ -1071,6 +1158,278 @@
       &-btn
         width: 100%
 
+  .foundation
+    &-info
+      &-elem
+        p
+          font-size: 12px
+          line-height: 18px
+      
+      &-price
+        padding: 20px 15px
+        +flex-wrap(wrap)
+
+        &-elem
+          width: 100%
+          text-align: center
+
+          &:first-child
+            padding: 0
+              bottom: 20px
+            border:
+              right: 0
+              bottom: 1px solid #00950F
+          
+          &:last-child
+            padding: 0
+        
+        &-title
+          font-size: 14px
+          line-height: 16px
+        
+        &-val
+          font-size: 18px
+          line-height: 21px
+
+          &-num
+            font-size: 20px
+            line-height: 24px
+
+        &-link
+          margin: 0 auto
+            top: 20px
+          max-width: 100%
+
+    &-about
+      &-elem
+        width: 100%
+
+        &-title
+          font-size: 18px
+          line-height: 24px
+        
+        &-desc
+          font-size: 14px
+          line-height: 18px
+
+    &-diff
+
+      &-slider
+        +flex
+        margin:
+          top: 40px
+        +flex-wrap(wrap)
+        +justify-content(space-between)
+
+        .slick-list
+          order: 1
+
+        .slick-arrow
+          position: relative
+          margin:
+            top: 0
+          top: auto
+
+          &.slick-prev
+            left: auto
+            order: 2
+          
+          &.slick-next
+            right: auto
+            order: 4
+        
+        .slick-dots
+          position: relative
+          top: -5px
+          left: auto
+          +prefix(transform, translateX(0))
+          order: 3
+        
+      &-elem
+        padding: 0 5px
+
+        &-wrap
+          padding: 20px 12px
+      
+      &-title
+        font-size: 20px
+        line-height: 30px
+
+      &-item
+        &-img
+          min-width: 235px
+          max-width: 235px
+        
+        &-text
+          font-size: 14px
+          line-height: 21px
+
+    &-advantages
+      &-wrap
+        +flex-wrap(wrap)
+
+      &-elem
+        margin:
+          bottom: 20px
+        width: 100%
+
+        &:last-child
+          margin:
+            bottom: 0
+      
+      &-item
+        font-size: 14px
+        line-height: 21px
+    
+    &-type
+      &-desc
+        font-size: 14px
+        line-height: 21px
+
+      &-elem
+        width: 100%
+
+        &-title
+          font-size: 18px
+          line-height: 27px
+          
+        &-desc
+          font-size: 14px
+          line-height: 21px
+
+        &-link
+          max-width: 100%
+
+    &-stage
+      &-wrap 
+        +flex-wrap(wrap)
+
+      &-elem
+        margin:
+          bottom: 50px
+        width: 100%
+
+        &:last-child
+          margin:
+            bottom: 0
+
+        &-num
+          &:before,
+          &:after
+            margin:
+              top: 0
+              left: -6px
+            top: auto
+            left: 50%
+            right: auto
+          
+          &:before
+            top: 0
+          
+          &:after
+            bottom: 0
+
+        &-title
+          margin:
+            top: 10px
+          font-size: 18px
+          line-height: 27px
+        
+        &-desc
+          font-size: 12px
+          line-height: 18px
+
+    &-other
+      &-title
+        font-size: 18px
+        line-height: 27px
+      
+      &-price
+        &-title
+          font-size: 12px
+          line-height: 14px
+        
+        &-val
+          font-size: 16px
+          line-height: 19px
+        
+      &-link
+        margin:
+          top: 20px
+
+    &-difference
+      &-table
+        padding: 14px 7px
+      
+        &-elem
+          padding: 7px 2px
+          font-size: 8px
+          line-height: 10px
+
+    &-notion
+      &-elem
+        +flex-wrap(wrap)
+
+        &:before
+          top: auto
+          bottom: 0
+
+      &-text
+        padding: 15px
+        width: 100%
+        font-size: 14px
+        line-height: 21px
+        order: 2
+      
+      &-img-wrap
+        padding:
+          bottom: 46.3%
+        width: 100%
+        order: 1
+    
+    &-tech
+      &-wrap
+        margin:
+          left: 0
+          right: 0
+        +flex-wrap(wrap)
+
+      &-elem
+        margin:
+          bottom: 40px
+        padding: 0
+        width: 100%
+
+        &:last-child
+          margin:
+            bottom: 0
+      
+        &-wrap
+          &:before
+            display: none
+
+        &-img-wrap
+          padding:
+            bottom: 75.5%
+        
+        &-info
+          padding: 15px
+
+        &-title
+          font-size: 18px
+          line-height: 27px
+        
+        &-desc
+          font-size: 14px
+          line-height: 21px
+
+    &-build
+      &-wrap
+        display: none
+      
+      &-slider
+        +flex
+
   .standard
     &-desc
       margin:
@@ -1115,6 +1474,12 @@
             width: 100%
             border: 0
               bottom: 3px solid #F7F7F8
+
+  .foundation
+    &-build
+      &-slider
+        &-elem
+          padding: 0
 
   .footer
     .social
@@ -1228,6 +1593,21 @@
         line-height: 33px
         text-align: center
 
+  .foundation
+    &-work
+      &-slider
+        padding: 0
+
+        .slick-arrow
+          &.slick-prev
+            background-image: url(../img/icon/arrow-s-l.svg)
+          
+          &.slick-next
+            background-image: url(../img/icon/arrow-s-r.svg)
+      
+      &-elem
+        margin: 0
+
 @media screen and (max-width: 420px)
   .header
     &-info 
@@ -1290,8 +1670,18 @@
       &-desc
         font-size: 13px
         line-height: 18px
-
+  
   .contact
     &-footer
       padding:
         bottom: 100%
+  
+  .foundation
+    &-diff        
+      &-item
+        &-img
+          min-width: 210px
+          max-width: 210px
+
+  .modal
+    padding: 50px 15px
