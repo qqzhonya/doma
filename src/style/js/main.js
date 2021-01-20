@@ -115,6 +115,8 @@ $(function() {
 
   var handleL = $('.catalog-filter-area-slider-handle-l');
   var handleR = $('.catalog-filter-area-slider-handle-r');
+  var valMin  = $('.catalog-filter-area-min');
+  var valMax  = $('.catalog-filter-area-max');
 
   $('.catalog-filter-area-slider').slider({
     range: true,
@@ -127,9 +129,14 @@ $(function() {
     },
     slide: function( event, ui ) {
       handleL.text(ui.values[ 0 ]);
-      handleR.text(ui.values[ 1 ])
+      handleR.text(ui.values[ 1 ]);
+      valMin.val(ui.values[0]);
+      valMax.val(ui.values[1]);
     }
   });
+
+  valMin.val($('.catalog-filter-area-slider').slider( "values", 0 ));
+  valMax.val($('.catalog-filter-area-slider').slider( "values", 1 ));
 
   // Filter range slider - end
 
