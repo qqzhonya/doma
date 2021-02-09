@@ -6,8 +6,18 @@
       input(type="text" placeholder="Имя").form-input
       input(type="text" placeholder="Почта").form-input
       textarea(name="form-comment" placeholder="Ваш вопрос").form-textarea
-      button.form-btn Отправить заявку
+      button.form-btn Отправить
       .form-note
         p Почта не публикуется.
         p Если вы отсавляете почту , то на нее придет уведомление и ссылка на отве.   
         p Мы против спама.
+
+.modal.modal-order(data-modal="modal-order")
+  .modal-body
+    .modal-close
+    form(action="").form
+      .form-title Заявка на строительство
+      input(type="text" placeholder="Ваше имя").form-input
+      input(type="text" placeholder="Номер телефона").form-input
+      textarea(name="form-comment" placeholder="Комментарий").form-textarea
+      button.form-btn Отправить

@@ -24,9 +24,7 @@
       .catalog-filter-elem.catalog-filter-area
         .catalog-filter-elem-title Площадь, м2
         .catalog-filter-area-wrap
-          .catalog-filter-area-slider
-            .catalog-filter-area-slider-handle.catalog-filter-area-slider-handle-l.ui-slider-handle
-            .catalog-filter-area-slider-handle.catalog-filter-area-slider-handle-r.ui-slider-handle
+          input(type="text" name="my_range" value="").catalog-filter-area-slider
           input(type="hidden").catalog-filter-area-min
           input(type="hidden").catalog-filter-area-max
         .catalog-filter-segment-wrap
@@ -69,7 +67,9 @@
           label.catalog-filter-item
             input(type="checkbox").catalog-filter-checkbox
             span.catalog-filter-item-title 7
-        .catalog-filter-hide-btn Показать
+        .catalog-filter-hide-btn 
+          span.catalog-filter-hide-btn-text Показать еще 
+          span.catalog-filter-hide-btn-val 0
       
       .catalog-filter-elem.catalog-filter-mod
         .catalog-filter-elem-title Модификация
@@ -104,7 +104,9 @@
           label.catalog-filter-item
             input(type="checkbox").catalog-filter-checkbox
             span.catalog-filter-item-title Крыльцо
-        .catalog-filter-hide-btn Показать еще 5
+        .catalog-filter-hide-btn 
+          span.catalog-filter-hide-btn-text Показать еще 
+          span.catalog-filter-hide-btn-val 0
 
       .catalog-filter-elem
         .catalog-filter-elem-title Проживание
@@ -139,7 +141,7 @@
                 path(d="M17.8898 8.47263H15.6942C15.396 8.47263 15.1543 8.70873 15.1543 8.99997C15.1543 9.2912 15.396 9.52731 15.6942 9.52731H17.8898C18.1879 9.52731 18.4297 9.2912 18.4297 8.99997C18.4297 8.70873 18.1879 8.47263 17.8898 8.47263Z" fill="black" fill-opacity="0.4")
       
       .catalog-filter-elem.catalog-filter-size
-        .catalog-filter-elem-title Модификация
+        .catalog-filter-elem-title Размер
         .catalog-filter-elem-item-wrap
           label.catalog-filter-item
             input(type="checkbox").catalog-filter-checkbox
@@ -186,7 +188,9 @@
           label.catalog-filter-item
             input(type="checkbox").catalog-filter-checkbox
             span.catalog-filter-item-title 7 х 9
-        .catalog-filter-hide-btn Показать еще 5
+        .catalog-filter-hide-btn 
+          span.catalog-filter-hide-btn-text Показать еще 
+          span.catalog-filter-hide-btn-val 0
 
       .catalog-filter-elem.catalog-filter-style
         .catalog-filter-elem-title Стиль
@@ -208,6 +212,7 @@
       button.catalog-filter-clear Очистить фильтр
       
     .catalog-product
+      
       .catalog-product-action
         .product
           .product-item.action
@@ -219,6 +224,7 @@
                 .product-item-name LB-1080
                 .product-item-size 
                   span 120 м
+                    sup 2
                   span 7 х 7
                   span 2 этажа
                 .product-item-room
@@ -247,6 +253,7 @@
                 .product-item-name LB-1080
                 .product-item-size 
                   span 120 м
+                    sup 2
                   span 7 х 7
                   span 2 этажа
                 .product-item-room
@@ -275,6 +282,7 @@
                 .product-item-name LB-1080
                 .product-item-size 
                   span 120 м
+                    sup 2
                   span 7 х 7
                   span 2 этажа
                 .product-item-room
@@ -301,7 +309,7 @@
             b "под усадку" 
             | - это сруб дома или бани 
           img(src="style/img/action-banner-bg.png", alt="").catalog-product-action-banner-img
-      
+
       .catalog-product-filter
         a(href="").catalog-product-filter-elem.active Дешевле
         a(href="").catalog-product-filter-elem Дороже
@@ -316,7 +324,95 @@
             .product-item-info
               .product-item-name LB-1080
               .product-item-size 
+                span 120 м 
+                  sup 2 
+                span 7 х 7 
+                span 2 этажа 
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м 
+                  sup 2 
+                span 7 х 7 
+                span 2 этажа 
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
+                span 120 м 
+                  sup 2 
+                span 7 х 7 
+                span 2 этажа 
+              .product-item-room
+                .product-item-room-elem 
+                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
+                  span.product-item-room-val 4 
+                  | спальни
+                .product-item-room-elem 
+                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
+                  span.product-item-room-val 2 
+                  | санузла
+            .product-item-price-range
+              .product-item-price-range-elem
+                .product-item-price-range-title Под ключ
+                .product-item-price-range-val от 936 682 руб.
+              .product-item-price-range-elem
+                .product-item-price-range-title Под усадку
+                .product-item-price-range-val от 600 000 руб.
+        
+        .product-item
+          .product-item-wrap
+            a(href="").product-item-img-wrap
+              img(src="style/img/product-img.jpg", alt="").product-item-img
+              .product-item-action-icon
+            .product-item-info
+              .product-item-name LB-1080
+              .product-item-size 
                 span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -345,6 +441,7 @@
               .product-item-name LB-1080
               .product-item-size 
                 span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -373,6 +470,7 @@
               .product-item-name LB-1080
               .product-item-size 
                 span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -401,6 +499,7 @@
               .product-item-name LB-1080
               .product-item-size 
                 span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -429,6 +528,7 @@
               .product-item-name LB-1080
               .product-item-size 
                 span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -457,90 +557,7 @@
               .product-item-name LB-1080
               .product-item-size 
                 span 120 м
-                span 7 х 7
-                span 2 этажа
-              .product-item-room
-                .product-item-room-elem 
-                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
-                  span.product-item-room-val 4 
-                  | спальни
-                .product-item-room-elem 
-                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
-                  span.product-item-room-val 2 
-                  | санузла
-            .product-item-price-range
-              .product-item-price-range-elem
-                .product-item-price-range-title Под ключ
-                .product-item-price-range-val от 936 682 руб.
-              .product-item-price-range-elem
-                .product-item-price-range-title Под усадку
-                .product-item-price-range-val от 600 000 руб.
-        
-        .product-item
-          .product-item-wrap
-            a(href="").product-item-img-wrap
-              img(src="style/img/product-img.jpg", alt="").product-item-img
-              .product-item-action-icon
-            .product-item-info
-              .product-item-name LB-1080
-              .product-item-size 
-                span 120 м
-                span 7 х 7
-                span 2 этажа
-              .product-item-room
-                .product-item-room-elem 
-                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
-                  span.product-item-room-val 4 
-                  | спальни
-                .product-item-room-elem 
-                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
-                  span.product-item-room-val 2 
-                  | санузла
-            .product-item-price-range
-              .product-item-price-range-elem
-                .product-item-price-range-title Под ключ
-                .product-item-price-range-val от 936 682 руб.
-              .product-item-price-range-elem
-                .product-item-price-range-title Под усадку
-                .product-item-price-range-val от 600 000 руб.
-        
-        .product-item
-          .product-item-wrap
-            a(href="").product-item-img-wrap
-              img(src="style/img/product-img.jpg", alt="").product-item-img
-              .product-item-action-icon
-            .product-item-info
-              .product-item-name LB-1080
-              .product-item-size 
-                span 120 м
-                span 7 х 7
-                span 2 этажа
-              .product-item-room
-                .product-item-room-elem 
-                  img(src="style/img/icon/bed.svg", alt="").product-item-room-img
-                  span.product-item-room-val 4 
-                  | спальни
-                .product-item-room-elem 
-                  img(src="style/img/icon/bathroom.svg", alt="").product-item-room-img
-                  span.product-item-room-val 2 
-                  | санузла
-            .product-item-price-range
-              .product-item-price-range-elem
-                .product-item-price-range-title Под ключ
-                .product-item-price-range-val от 936 682 руб.
-              .product-item-price-range-elem
-                .product-item-price-range-title Под усадку
-                .product-item-price-range-val от 600 000 руб.
-        
-        .product-item
-          .product-item-wrap
-            a(href="").product-item-img-wrap
-              img(src="style/img/product-img.jpg", alt="").product-item-img
-              .product-item-action-icon
-            .product-item-info
-              .product-item-name LB-1080
-              .product-item-size 
-                span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -569,6 +586,7 @@
               .product-item-name LB-1080
               .product-item-size 
                 span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -597,6 +615,7 @@
               .product-item-name LB-1080
               .product-item-size 
                 span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -625,6 +644,7 @@
               .product-item-name LB-1080
               .product-item-size 
                 span 120 м
+                  sup 2
                 span 7 х 7
                 span 2 этажа
               .product-item-room
@@ -648,11 +668,13 @@
         a(href="").pagination-arrow.prev
           svg(width="14" height="27" viewBox="0 0 14 27" fill="none" xmlns="http://www.w3.org/2000/svg").pagination-arrow-icon
             path(d="M13 26L1 13.5L13 0.999999" stroke="#631E01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
-        a(href="").pagination-elem.active
-        a(href="").pagination-elem
-        a(href="").pagination-elem
-        a(href="").pagination-elem
-        a(href="").pagination-elem
+        a(href="").pagination-elem.active 1
+        a(href="").pagination-elem 2
+        a(href="").pagination-elem 3
+        a(href="").pagination-elem 4
+        a(href="").pagination-elem 5
+        a(href="").pagination-elem 6
+        a(href="").pagination-elem 7
         a(href="").pagination-arrow.next
           svg(width="14" height="27" viewBox="0 0 14 27" fill="none" xmlns="http://www.w3.org/2000/svg").pagination-arrow-icon
             path(d="M1 1L13 13.5L1 26" stroke="#631E01" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")

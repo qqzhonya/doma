@@ -113,46 +113,80 @@ $(function() {
   
   // Filter range slider
 
-  var handleL = $('.catalog-filter-area-slider-handle-l');
-  var handleR = $('.catalog-filter-area-slider-handle-r');
-  var valMin  = $('.catalog-filter-area-min');
-  var valMax  = $('.catalog-filter-area-max');
+  var $range = $(".catalog-filter-area-slider"),
+      $inputMin = $('.catalog-filter-area-min'),
+      $inputMax = $('.catalog-filter-area-max'),
+      instance, 
+      min = 50,
+      max = 1000,
+      from = 0,
+      to = 0;
 
-  $('.catalog-filter-area-slider').slider({
-    range: true,
-    min: 0,
-    max: 1000,
-    values: [ 0, 1000 ],
-    create: function() {
-      handleL.text($(this).slider("values", 0));
-      handleR.text($(this).slider("values", 1));
-    },
-    slide: function( event, ui ) {
-      handleL.text(ui.values[ 0 ]);
-      handleR.text(ui.values[ 1 ]);
-      valMin.val(ui.values[0]);
-      valMax.val(ui.values[1]);
-    }
+  $range.ionRangeSlider({
+    skin: "big",
+    type: "double",
+    min: min,
+    max: max,
+    from: 50,
+    to: 1000,
+    hide_min_max: true,
+    hide_from_to: true,
+    onStart: updateInputs,
+    onChange: updateInputs
   });
 
-  valMin.val($('.catalog-filter-area-slider').slider( "values", 0 ));
-  valMax.val($('.catalog-filter-area-slider').slider( "values", 1 ));
+  instance = $range.data("ionRangeSlider");
+
+  function updateInputs (data) {
+    from = data.from;
+    to = data.to;
+
+    $('.irs-handle.from').html(from);
+    $('.irs-handle.to').html(to);
+    $inputMin.prop("value", from);
+    $inputMax.prop("value", to);
+  };
 
   // Filter range slider - end
+
+  // Show\Hide btn val
+
+  function showBtnVal(button) {
+    button.each(function() {
+      let btnParent = $(this).parent();
+      let btnVal = $(this).find('.catalog-filter-hide-btn-val');
+      let filterItem = btnParent.find('.catalog-filter-item');
+
+      let filterItemVal = filterItem.filter(function() {
+          return $(this).css('display') == 'none';
+        }).length;
+
+      btnVal.html(filterItemVal);
+    });
+  }
+  
+  showBtnVal($('.catalog-filter-hide-btn'));
+
+  // Show\HIde btn val - end 
 
   // Show\Hide room
 
   $('.catalog-filter-hide-btn').click(function() {
-    var parent = $(this).parent();
+    let parent = $(this).parent();
+
+    let btnText = $(this).find('.catalog-filter-hide-btn-text');
+    let btnVal = $(this).find('.catalog-filter-hide-btn-val');
 
     $(this).toggleClass('active');
 
     if($(this).hasClass('active')) {
-      $(this).text('Скрыть');
+      btnText.text('Скрыть ');
+      btnVal.hide();
       parent.addClass('show');
     } else {
-      $(this).text('Показать');
+      btnText.text('Показать еще ');
       parent.removeClass('show');
+      btnVal.show();
     }
   });
 
@@ -502,7 +536,6 @@ $(function() {
     console.log(btnVal);
   });
 
-  $('')
 
   $('.modal-close').click(function() {
 		$('.modal').fadeOut();

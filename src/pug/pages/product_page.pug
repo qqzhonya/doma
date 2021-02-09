@@ -54,14 +54,14 @@
         .product-sidebar 
           .product-sidebar-elem
             .product-sidebar-size
-              .product-size-name Размер
-              .product-size-val 8х8 м
+              .product-sidebar-size-name Размер
+              .product-sidebar-size-val 8х8 м
             .product-sidebar-size
-              .product-size-name Площадь
-              .product-size-val 120 кв.м
+              .product-sidebar-size-name Площадь
+              .product-sidebar-size-val 120 кв.м
             .product-sidebar-size
-              .product-size-name Этажность
-              .product-size-val 2 этажа
+              .product-sidebar-size-name Этажность
+              .product-sidebar-size-val 2 этажа
           
           .product-sidebar-elem
             form(action="").product-sidebar-form
@@ -121,7 +121,7 @@
                   | Цена указана без стоимости 
                   a(href="").product-sidebar-note-link фундамента
               
-              a(href="").product-sidebar-order Заказть строительство
+              .product-sidebar-order.modal-btn(data-modal-btn="modal-order") Заказть строительство
           
           .product-sidebar-info
             .product-sidebar-info-elem 

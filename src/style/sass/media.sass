@@ -136,6 +136,10 @@
         
         &.active
           +flex
+      
+      &-more
+        &.main-advantages-more-b
+          +flex
 
     &-info
       &-wrap
@@ -1277,9 +1281,9 @@
           margin:
             bottom: 0
       
-      &-item
-        font-size: 14px
-        line-height: 21px
+        li
+          font-size: 14px
+          line-height: 21px
     
     &-type
       &-desc
@@ -1643,6 +1647,20 @@
       .slick-arrow
         margin: 0 10px
   
+  .pagination
+    &-arrow,
+    &-elem
+      width: 26px
+      height: 26px
+
+    &-arrow
+      &-icon
+        width: 7px
+
+    &-elem
+      font-size: 16px
+      line-height: 26px
+
   .main
     &-info
       &-projects

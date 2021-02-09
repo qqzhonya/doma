@@ -342,6 +342,7 @@ a
 
 				&:after
 					content: ', '
+					color: $font-color
 
 		&-room
 			+flex()
@@ -368,6 +369,8 @@ a
 					right: 10px
 
 			&-val
+				margin:
+					right: 3px
 				font-weight: 700
 		
 		&-time
@@ -649,6 +652,7 @@ a
 		padding: 12px 18px
 		width: 100%
 		max-width: 365px
+		font-family: $default-font
 		font-size: 14px
 		font-weight: 500
 		line-height: 16px
@@ -726,6 +730,7 @@ a
 			color: #7F7F7F
 
 	&-btn
+		position: relative
 		margin:
 			top: 15px
 		padding: 9px 23px
@@ -737,6 +742,7 @@ a
 		border: 1px solid #631E01
 			radius: 10px
 		+prefix(transition, $default-transition)
+		z-index: 1
 		cursor: pointer
 
 		&:hover
@@ -771,8 +777,8 @@ a
 	&-arrow
 		+flex
 		position: relative
-		width: 50px
-		height: 50px
+		width: 34px
+		height: 34px
 		background-color: transparent
 		border-radius: 100px
 		+prefix(transition, $default-transition)
@@ -780,22 +786,26 @@ a
 		+align-items(center)
 	
 		&-icon
+			width: 8px
+			height: auto
 			path
 				+prefix(transition, $default-transition)
 
 		&.prev
 			margin:
-				right: 30px
+				right: 8px
+
 			.pagination-arrow-icon
 				margin:
 					left: -3px
 		
 		&.next
 			margin:
-				left: 30px
+				left: 8px
+
 			.pagination-arrow-icon
 				margin:
-					right: -5px
+					right: -3px
 
 		&:hover
 			background-color: #631E01
@@ -806,18 +816,25 @@ a
 
 	&-elem
 		display: block
-		margin: 0 3px
+		margin: 0 2px
 		width: 100% 
-		max-width: 45px
-		height: 4px
-		background-color: rgba(104, 47, 19, 0.2)
-		border-radius: 10px
+		max-width: 34px
+		height: 34px
+		font-size: 18px
+		font-weight: 400
+		color: #631E01
+		text-align: center
+		line-height: 32px
+		background-color: transparent
+		border-radius: 100px
 		+prefix(transition, $default-transition)
 
 		&:not(.active):hover
 			background-color: rgba(104, 47, 19, 0.4)
 
 		&.active
+			font-weight: 700
+			color: $white
 			background-color: #682F13
 			+box-shadow(0px 0px 4px rgba(0, 0, 0, 0.25))
 

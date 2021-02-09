@@ -80,10 +80,11 @@
     text-align: center
     border:
       bottom: 2px dashed #682F13
+    +prefix(transition, $default-transition)
     cursor: pointer
 
     &:hover
-      border-bottom-style: solid
+      opacity: $default-opacity
   
   &-project
     position: relative
