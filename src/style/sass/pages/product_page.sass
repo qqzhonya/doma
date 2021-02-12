@@ -65,6 +65,7 @@
   
   &-prev-slider
     &-item
+      display: block
       position: relative
       padding:
         bottom: 12.5%
@@ -72,6 +73,28 @@
       background-color: grey
       border-radius: 10px
       overflow: hidden
+
+      &:after
+        content: ''
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        width: 100%
+        height: 100%
+        background-color: rgba(0, 0, 0, .4)
+        background-image: url(../img/icon/zoom.svg)
+        background-size: 50px 50px
+        background-position: center center
+        background-repeat: no-repeat
+        opacity: 0
+        +prefix(transition, $default-transition)
+
+      &:hover
+        &:after
+          opacity: 1
 
       &-img
         position: absolute
@@ -605,13 +628,14 @@
           border-color: #427834
 
         .product-complect-table-desc
-          width: 60.6%
+          width: 56.6%
         
         .product-complect-table-price
           margin: 0 0 0 auto
           padding:
             left: 20px
-          width: 6.85%
+          text-align: right
+          width: 10.85%
 
       &-body
         position: relative
@@ -631,6 +655,9 @@
         
         &.disabled
           opacity: .5
+
+          .product-complect-table-name-img
+            pointer-events: none
 
       &-head
         position: absolute
@@ -675,6 +702,8 @@
         width: 32.07%
 
         &-text
+          padding:
+            right: 10px
           font-size: 18px
           font-weight: 700
           line-height: 21px
@@ -682,10 +711,38 @@
           max-width: 290px
         
         &-img
+          display: block
           position: relative
           margin: 0 0 0 auto
-          padding:
-            left: 10px
+          width: 40px
+          height: 40px
+
+          &:after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            right: 0
+            bottom: 0
+            width: 100%
+            height: 100%
+            background-color: rgba(0, 0, 0, .4)
+            background-image: url(../img/icon/zoom.svg)
+            background-size: 20px 20px
+            background-position: center center
+            background-repeat: no-repeat
+            opacity: 0
+            +prefix(transition, $default-transition)
+
+          &:hover
+            &:after
+              opacity: 1
+
+          img
+            display: block
+            width: 100%
+            height: auto
 
           &-number
             position: absolute
@@ -698,6 +755,7 @@
             color: $white
             background-color: $green-color
             border-radius: 100px
+            z-index: 2
 
       &-desc
         padding:

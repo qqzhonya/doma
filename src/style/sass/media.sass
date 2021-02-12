@@ -28,6 +28,17 @@
           margin:
             bottom: 0
 
+    &-complect
+      &-table
+        &.add
+          .product-complect-table-desc
+            width: 52.6%
+
+          .product-complect-table-price
+            padding:
+              left: 10px
+            width: 14.85%
+
   .warranty
     &-build
       &-cover
@@ -117,12 +128,13 @@
         display: none 
 
     &-head
-      &-slider-info
-        padding:
-          top: 15px
-          bottom: 15px
-        background-color: rgba(255, 255, 255, .5)
-    
+      &-slider
+        &-info
+          padding:
+            top: 15px
+            bottom: 15px
+          background-color: rgba(255, 255, 255, .5)
+
     &-advantages
       .container-head
         .main-advantages-more
@@ -621,6 +633,7 @@
             font-size: 13px
             line-height: 15px
 
+        &-btn,
         &-link
           padding: 10px 37px
           font-size: 16px
@@ -644,6 +657,21 @@
           
             img
               width: 100%
+
+        &-link-dropdown
+          margin: 0 auto
+            bottom: 35px
+          padding:
+            top: 20px
+          width: 290px
+
+          .main-head-slider-link + .main-head-slider-link
+            margin: 0
+              top: 10px
+
+          .main-head-slider-link
+            margin: 0
+            width: 100%
     
     &-advantages
       margin:
@@ -918,6 +946,7 @@
             padding:
               left: 0
             width: 100%
+            text-align: left
 
     &-callback
       padding: 100px 0 130px 0
@@ -1182,7 +1211,7 @@
               bottom: 20px
             border:
               right: 0
-              bottom: 1px solid #00950F
+              bottom: 1px solid #00950f
           
           &:last-child
             padding: 0
@@ -1611,6 +1640,13 @@
       
       &-elem
         margin: 0
+
+@media screen and (max-width: 520px)
+  .foundation
+    &-other
+      &-img-wrap
+        height: 210px
+
 
 @media screen and (max-width: 420px)
   .header

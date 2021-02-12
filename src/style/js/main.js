@@ -23,6 +23,39 @@ $(function() {
 
   // Main head slider - end
 
+  // Main head slider link wrap
+
+  $(".main-head-slider-more-btn").click(function(e) {
+    e.stopPropagation();
+    $(this).toggleClass('active');
+
+    let linkWrap = $(".main-head-slider-link-dropdown");
+
+    if($(this).hasClass('active')) {
+      $(this).hide()
+      linkWrap.show();
+    } else {
+      $(this).show()
+      linkWrap.hide();
+    }
+  });
+
+  $('.main-head-slider-btn, .main-head-slider-link-dropdown').click(function(e) {
+    e.stopPropagation();
+  })
+
+  $(window).click(function() {
+    $('.main-head-slider-more-btn').removeClass('active').show();
+    $('.main-head-slider-link-dropdown').hide();
+  })
+
+  $('.main-head-slider-link-dropdown-close').click(function() {
+    $('.main-head-slider-more-btn').removeClass('active').show();
+    $('.main-head-slider-link-dropdown').hide();
+  })
+
+  // Main head slider link wrap - end
+
   // Main page advantages
 
   $('.main-advantages-more').click(function() {
@@ -47,11 +80,30 @@ $(function() {
     $(this)
       .addClass('active').siblings().removeClass('active')
       .closest('div.main-popular-tab').find('div.main-popular-tab-elem').removeClass('active').eq($(this).index()).addClass('active');
-  
+
     $('.product-slider').slick('refresh')
   });
 
   // Main page popular tab - end 
+
+  // Main page popular tab url
+
+  function changeUrl(btn) {
+    var tabData = btn.data('url');
+    var popularBtn = $('.main-popular-all');
+    
+    popularBtn.attr('href', tabData);
+  }
+
+  $(window).on('load', function() {
+    changeUrl($('.main-popular-tab-nav-elem.active'));
+  });
+
+  $('.main-popular-tab-nav-elem').click(function() {
+    changeUrl($(this));
+  });
+
+  // Main page popular tab url - end 
 
   // Product slider
 
@@ -117,8 +169,8 @@ $(function() {
       $inputMin = $('.catalog-filter-area-min'),
       $inputMax = $('.catalog-filter-area-max'),
       instance, 
-      min = 50,
-      max = 1000,
+      min = $range.data('min-val'),
+      max = $range.data('max-val'),
       from = 0,
       to = 0;
 
@@ -127,8 +179,8 @@ $(function() {
     type: "double",
     min: min,
     max: max,
-    from: 50,
-    to: 1000,
+    from: $range.data('min-val'),
+    to: $range.data('max-val'),
     hide_min_max: true,
     hide_from_to: true,
     onStart: updateInputs,
@@ -149,6 +201,45 @@ $(function() {
 
   // Filter range slider - end
 
+  // Filter area buttons
+
+  function getVal(btn) {
+    let parent = btn.parent().parent()
+    let inputMin = parent.find('.catalog-filter-input-min');
+    let inputMax = parent.find('.catalog-filter-input-max');
+    let btnMin = btn.data('min');
+    let btnMax = btn.data('max');
+
+    inputMin.val(btnMin);
+    inputMax.val(btnMax);
+  }
+
+  $('.catalog-filter-price-btn').click(function() {
+    $(this).addClass('active').siblings().removeClass('active');
+    getVal($(this));
+  });
+
+  $('.catalog-filter-area-btn').click(function() {
+    $(this).addClass('active').siblings().removeClass('active');
+    getVal($(this));
+
+    var inputAreaMinVal = $('.catalog-filter-area-min').val();
+    var inputAreaMaxVal = $('.catalog-filter-area-max').val();
+    
+    console.log(inputAreaMinVal, inputAreaMaxVal);
+
+    $range.data("ionRangeSlider").update({
+      from: inputAreaMinVal,
+      to: inputAreaMaxVal
+    });
+
+    $('.irs-handle.from').html(inputAreaMinVal);
+    $('.irs-handle.to').html(inputAreaMaxVal);
+
+  });
+
+  // Filter area buttons end
+
   // Show\Hide btn val
 
   function showBtnVal(button) {
@@ -158,7 +249,7 @@ $(function() {
       let filterItem = btnParent.find('.catalog-filter-item');
 
       let filterItemVal = filterItem.filter(function() {
-          return $(this).css('display') == 'none';
+          return $(this).css('display') === 'none';
         }).length;
 
       btnVal.html(filterItemVal);

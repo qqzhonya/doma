@@ -164,10 +164,13 @@
         line-height: 19px
         color: $green-color
 
-    &-link
-      display: inline-block
+    &-more
       margin:
         top: 30px
+
+    &-more-btn,
+    &-link
+      display: inline-block
       padding: 10px 50px 
       font-size: 18px
       font-weight: 700
@@ -175,6 +178,7 @@
       color: $green-color 
       border: 1px solid $green-color
       border-radius: 10px
+      cursor: pointer
       +prefix(transition, $default-transition)
 
       &:hover
@@ -193,7 +197,47 @@
         line-height: 25px
         color: #ff0000
         text-align: center
-        
+
+    &-link-dropdown
+      display: none
+      position: relative
+      padding: 10px
+      width: 320px
+      background-color: rgba(255, 255, 255, 1)
+      border:
+        radius: 10px
+      +box-shadow(0px 5px 7px rgba(0, 0, 0, 0.1))
+
+      &-close
+        position: absolute
+        top: 10px
+        right: 10px
+        width: 10px
+        height: 10px
+        background-image: url(../img/icon/cross.svg)
+        background-size: cover
+        background-position: center center
+        background-repeat: no-repeat
+        cursor: pointer
+
+      &-title
+        padding:
+          bottom: 10px
+        font-size: 14px
+        font-weight: 400
+        color: #737373
+        text-align: center
+
+      .main-head-slider-link
+        margin:
+          bottom: 10px
+        padding: 10px
+        width: 100%
+        text-align: center
+
+        &:last-child
+          margin: 0
+
   &-advantages
     margin:
       top: 50px

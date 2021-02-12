@@ -12,26 +12,26 @@
       .catalog-filter-elem.catalog-filter-price
         .catalog-filter-elem-title Цена, руб. 
         .catalog-filter-price-wrap
-          input(type="text" placeholder="от").catalog-filter-input
+          input(type="text" placeholder="от").catalog-filter-input.catalog-filter-input-min
           .catalog-filter-price-dash
-          input(type="text" placeholder="до").catalog-filter-input
+          input(type="text" placeholder="до").catalog-filter-input.catalog-filter-input-max
         .catalog-filter-segment-wrap
-          button.catalog-filter-segment.active до 300 тыс
-          button.catalog-filter-segment 300-500
-          button.catalog-filter-segment 500-700
-          button.catalog-filter-segment 700+
+          button(type='button' data-min="0" data-max="300").catalog-filter-segment.catalog-filter-price-btn до 300 тыс
+          button(type='button' data-min="300" data-max="500").catalog-filter-segment.catalog-filter-price-btn 300-500
+          button(type='button' data-min="500" data-max="700").catalog-filter-segment.catalog-filter-price-btn 500-700
+          button(type='button' data-min="700" ).catalog-filter-segment.catalog-filter-price-btn 700+
       
       .catalog-filter-elem.catalog-filter-area
         .catalog-filter-elem-title Площадь, м2
         .catalog-filter-area-wrap
-          input(type="text" name="my_range" value="").catalog-filter-area-slider
-          input(type="hidden").catalog-filter-area-min
-          input(type="hidden").catalog-filter-area-max
+          input(type="text" name="my_range" value="" data-min-val="0" data-max-val="300").catalog-filter-area-slider
+          input(type="hidden").catalog-filter-area-min.catalog-filter-input-min
+          input(type="hidden").catalog-filter-area-max.catalog-filter-input-max
         .catalog-filter-segment-wrap
-          button.catalog-filter-segment.active до 300 тыс
-          button.catalog-filter-segment 300-500
-          button.catalog-filter-segment 500-700
-          button.catalog-filter-segment 700+
+          button(type='button' data-min="0" data-max="50").catalog-filter-segment.catalog-filter-area-btn до 50 тыс
+          button(type='button' data-min="50" data-max="100").catalog-filter-segment.catalog-filter-area-btn 50-100
+          button(type='button' data-min="100" data-max="150").catalog-filter-segment.catalog-filter-area-btn 100-150
+          button(type='button' data-min="150" data-max="300").catalog-filter-segment.catalog-filter-area-btn 150+
       
       .catalog-filter-elem
         .catalog-filter-elem-title Количество этажей

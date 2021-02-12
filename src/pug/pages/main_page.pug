@@ -25,7 +25,13 @@
           .main-head-slider-note-elem под ключ
         .main-head-slider-note-desc
           | Все включено – окна, двери, полы, утепление
-      a(href="").main-head-slider-link Подробнее
+      .main-head-slider-more
+        .main-head-slider-more-btn Подробнее
+        .main-head-slider-link-dropdown
+          .main-head-slider-link-dropdown-close
+          .main-head-slider-link-dropdown-title В какую категорию Вы хотите перейти:
+          a(href="").main-head-slider-link Дома из бруса
+          a(href="").main-head-slider-link Каркасные дома
       .main-head-slider-timer
         .main-head-slider-timer-arrow
           img(src="style/img/icon/action-arrow.svg", alt="")
@@ -58,7 +64,13 @@
           .main-head-slider-note-elem под ключ
         .main-head-slider-note-desc
           | Все включено – окна, двери, полы, утепление
-      a(href="").main-head-slider-link Подробнее
+      .main-head-slider-more
+        .main-head-slider-more-btn Подробнее
+        .main-head-slider-link-dropdown
+          .main-head-slider-link-dropdown-close
+          .main-head-slider-link-dropdown-title В какую категорию Вы хотите перейти:
+          a(href="").main-head-slider-link Дома из бруса
+          a(href="").main-head-slider-link Каркасные дома
 
 img(src="style/img/cone-1.png", alt="").main-cone-1
 img(src="style/img/cone-1.png", alt="").main-cone-2
@@ -181,9 +193,9 @@ img(src="style/img/leaf-1.png", alt="").main-leaf-2
 
     .main-popular-tab
       ul.main-popular-tab-nav
-        li.main-popular-tab-nav-elem.active Дома из бруса
-        li.main-popular-tab-nav-elem Каркасные дома
-        li.main-popular-tab-nav-elem Бани из бруса
+        li.main-popular-tab-nav-elem.active(data-url="/project/bani-iz-brusa/") Дома из бруса
+        li.main-popular-tab-nav-elem(data-url="/project/sruby-domov/") Каркасные дома
+        li.main-popular-tab-nav-elem(data-url="/project/karkasnie-doma/") Бани из бруса
 
       .main-popular-tab-elem.active
         .product.product-slider
