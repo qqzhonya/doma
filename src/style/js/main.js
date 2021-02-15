@@ -490,6 +490,9 @@ $(function() {
 
     if($(this).hasClass('active')) {
       $('.catalog-filter').slideDown();
+      $('html,body').animate({
+        scrollTop: $('.catalog-filter').offset().top
+      }, 100);
     }
   });
 
